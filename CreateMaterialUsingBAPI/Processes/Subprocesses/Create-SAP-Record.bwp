@@ -8,6 +8,7 @@
     xmlns:ns0="http://www.tibco.com/namespaces/tnt/plugins/invokerequestresponse+dc984fb9-6b92-4893-b860-6582cb2e91d9+Input"
     xmlns:ns1="http://ns.tibco.com/bw/palette/sap"
     xmlns:ns10="http://example.com/Plant"
+    xmlns:ns11="http://www.example.com/namespaces/tns/1686808031661"
     xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+bw.sap.InvokeRequestResponse"
     xmlns:ns3="http://www.tibco.com/namespaces/tnt/plugins/invokerequestresponse+eab808b4-3abb-4a72-8944-cea54ffdef38+Input"
     xmlns:ns4="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_MATERIAL_SAVEDATA"
@@ -42,6 +43,21 @@
             <endingVariables>
                 <variable>InvokeRFCBAPIinSAP-input</variable>
                 <variable>InvokeRFCBAPIinSAP</variable>
+            </endingVariables>
+        </task>
+        <task name="inLog">
+            <endingVariables>
+                <variable>inLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="outLog">
+            <endingVariables>
+                <variable>outLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="ErroroutLog">
+            <endingVariables>
+                <variable>ErroroutLog-input</variable>
             </endingVariables>
         </task>
     </tibex:VariableDescriptor>
@@ -424,7 +440,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="439"
+                                    <layoutConstraint x="425"
                                     xsi:type="notation:Bounds" y="90"/>
                                     </children>
                                     <children type="4002">
@@ -463,6 +479,114 @@
                                     <layoutConstraint x="439"
                                     xsi:type="notation:Bounds" y="203"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
+                                    <layoutConstraint x="106"
+                                    xsi:type="notation:Bounds" y="90"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
+                                    <layoutConstraint x="528"
+                                    xsi:type="notation:Bounds" y="90"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
+                                    <layoutConstraint x="555"
+                                    xsi:type="notation:Bounds" y="203"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -476,7 +600,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="384"
+                                    <layoutConstraint height="289"
                                     width="805" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -512,17 +636,6 @@
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
@@ -530,19 +643,8 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[25, 0, -196, 0]$[197, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -552,20 +654,74 @@
             </children>
             <styles lineColor="9983" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="9983" fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
+            <bendpoints points="[25, 7, -89, -26]$[90, 26, -24, -7]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[25, 0, -88, 0]$[89, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints
-                points="[25, -11, -215, 101]$[216, -101, -24, 11]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -15, -53, 33]$[54, -33, -24, 15]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
+            <bendpoints points="[25, 7, -132, -41]$[133, 41, -24, -7]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints points="[25, -3, -93, 13]$[94, -13, -24, 3]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[25, -23, -78, 74]$[79, -74, -24, 23]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -585,12 +741,15 @@
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1686747150555" prefix="tns4"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.com/namespaces/tns/1686808031661" prefix="tns7"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_MATERIAL_SAVEDATA"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_TRANSACTION_COMMIT"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_TRANSACTION_ROLLBACK"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686746457503"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686747150555"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686808031661"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -625,6 +784,17 @@
             sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns8:SAPInputRecord" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable name="httpClientResource"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient}HttpClientConfiguration" type="xsd:string">
+            <bpws:from>
+                <bpws:literal>EBX-SAP-Data-Sync.EBX-Server-ClientConnection</bpws:literal>
+            </bpws:from>
+        </bpws:variable>
+        <bpws:variable element="ns11:Log" name="inLog-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns11:Log" name="outLog-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns11:Log" name="ErroroutLog-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -637,15 +807,20 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToInvokeRFCBAPIinSAP" tibex:linkType="SUCCESS"/>
                 <bpws:link
                     name="InvokeRFCBAPIinSAPToInvokeRFCBAPIinSAP1_Success"
                     tibex:label="Success" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link name="InvokeRFCBAPIinSAP1ToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link
                     name="Create-MaterialToInvokeRFCBAPIinSAP_Failure"
                     tibex:label="Failure" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link name="InvokeRFCBAPIinSAPToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToconsoleLogger-In" tibex:linkType="SUCCESS"/>
+                <bpws:link name="consoleLogger-InToCreate-Material" tibex:linkType="SUCCESS"/>
+                <bpws:link
+                    name="Commit-TransactionToCopy_1_consoleLogger-In" tibex:linkType="SUCCESS"/>
+                <bpws:link name="Copy_1_consoleLogger-InToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link
+                    name="InvokeRFCBAPIinSAPToCopy_1_consoleLogger-out" tibex:linkType="SUCCESS"/>
+                <bpws:link name="Copy_1_consoleLogger-outToEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -653,9 +828,7 @@
                     tibex:xpdlId="a258cfa2-9287-46f7-a286-4e57fc185643"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToInvokeRFCBAPIinSAP">
-                            <tibex:DesignExpression/>
-                        </bpws:source>
+                        <bpws:source linkName="StartToconsoleLogger-In"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -667,8 +840,8 @@
                     name="End"
                     tibex:xpdlId="768f1a97-dfec-4d88-8520-4934698eb6cc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="InvokeRFCBAPIinSAP1ToEnd"/>
-                        <bpws:target linkName="InvokeRFCBAPIinSAPToEnd"/>
+                        <bpws:target linkName="Copy_1_consoleLogger-InToEnd"/>
+                        <bpws:target linkName="Copy_1_consoleLogger-outToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -697,7 +870,7 @@
                     outputVariable="Create-Material"
                     tibex:xpdlId="dc984fb9-6b92-4893-b860-6582cb2e91d9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="StartToInvokeRFCBAPIinSAP"/>
+                        <bpws:target linkName="consoleLogger-InToCreate-Material"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="InvokeRFCBAPIinSAPToInvokeRFCBAPIinSAP1_Success">
@@ -758,7 +931,7 @@
                         <bpws:target linkName="InvokeRFCBAPIinSAPToInvokeRFCBAPIinSAP1_Success"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="InvokeRFCBAPIinSAP1ToEnd"/>
+                        <bpws:source linkName="Commit-TransactionToCopy_1_consoleLogger-In"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -802,7 +975,7 @@
                         <bpws:target linkName="Create-MaterialToInvokeRFCBAPIinSAP_Failure"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="InvokeRFCBAPIinSAPToEnd"/>
+                        <bpws:source linkName="InvokeRFCBAPIinSAPToCopy_1_consoleLogger-out"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -835,6 +1008,63 @@
                         </bwext:BWActivity>
                     </tibex:config>
                 </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="inLog-input"
+                    name="inLog"
+                    tibex:xpdlId="3de5c6bc-9487-4636-9d38-7cc8d4d332e4"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="StartToconsoleLogger-In"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="consoleLogger-InToCreate-Material"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding coercion=""
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;consoleLogger-In-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Creating SAP Record ######### &amp;quot;&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($Start, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess spawn="true"
+                        subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="outLog-input"
+                    name="outLog"
+                    tibex:xpdlId="37a63daa-5d94-49d4-b4c3-1361728ba241"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="Commit-TransactionToCopy_1_consoleLogger-In"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="Copy_1_consoleLogger-InToEnd"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding coercion=""
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Create-Material&quot;/>&lt;xsl:template name=&quot;consoleLogger-out-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Success: Created SAP Record ######### &amp;quot;&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($Create-Material/RfcResponse/RETURN, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess spawn="true"
+                        subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="ErroroutLog-input"
+                    name="ErroroutLog"
+                    tibex:xpdlId="89fa6142-85d5-4cdd-8e00-a349d25d164a"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="InvokeRFCBAPIinSAPToCopy_1_consoleLogger-out"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="Copy_1_consoleLogger-outToEnd"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding coercion=""
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Create-Material&quot;/>&lt;xsl:template name=&quot;consoleLogger-Errorout-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Failure: Failed to Create SAP Record ######### &amp;quot;&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($Create-Material/RfcResponse/RETURN, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess spawn="true"
+                        subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>

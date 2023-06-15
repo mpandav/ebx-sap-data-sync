@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="JSON">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rows">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="label" type="xs:string" />
+              <xs:element name="details" type="xs:string" />
+              <xs:element name="content">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="mandant">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:unsignedShort" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="matnr">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:unsignedByte" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="material-desc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SalesText">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="industrySector">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="label" type="xs:string" />
+                          <xs:element name="details" type="xs:string" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="mat-type">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="label" type="xs:string" />
+                          <xs:element name="details" type="xs:string" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="matl_group">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="label" type="xs:string" />
+                          <xs:element name="details" type="xs:string" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="matOwner">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="phasedOut">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:boolean" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="phaseOutDate">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="recordStatus">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="recordCreated">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:boolean" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="basic-1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="general-data">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="content">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="base_uom">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" type="xs:string" />
+                                                  <xs:element name="label" type="xs:string" />
+                                                  <xs:element name="details" type="xs:string" />
+                                                  <xs:element name="selector" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="old_mat_no">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="division">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="lab_design">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="prod_memo">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="prod_hier">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="x_plant_matl_status">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                  <xs:element name="selector" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="valid_from">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="assign-effect-vals">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="genItemCatGroup">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="material-authorization-group">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="content">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="authorization-group">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="dimensions">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="content">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="gross_wt">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="unit_of_wt">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" type="xs:string" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="net_weight">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="volume">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="volumeunit">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="size_dim">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ean_upc">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ean_cat">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="packaging-material-data">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="content">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="matl-grp-pack-matls">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="content" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Plants">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="details" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sourceSystem">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sourceSystemId">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="duplicateTo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="similarTo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="successorOf">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" />
+                          <xs:element name="selector" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="validFrom">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:date" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="validTo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="content" type="xs:date" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pagination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="firstPage" />
+              <xs:element name="previousPage" />
+              <xs:element name="nextPage" />
+              <xs:element name="lastPage" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

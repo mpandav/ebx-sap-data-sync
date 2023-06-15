@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:id="http://www.tibco.com/ws/2013/11/identity" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:sca_ext="http://www.tibco.com/ns/sca/201311" xmlns:subject="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/identity/subject" xmi:id="_JCAgIAqpEe6ikPJ6ZQ7YGw" name="EBX-SAP-Data-Sync.EBX-Server-ClientConnection" type="http:HttpClientConfiguration">
+  <identitySet xmi:id="_Q9cFoAqpEe6ikPJ6ZQ7YGw" appliesTo="namedResource" name="HttpClientIdentitySet" provides="confidentiality">
+    <sca_ext:intentMap xmi:id="_Q9cFoQqpEe6ikPJ6ZQ7YGw" provides="sca_ext:confidentiality">
+      <sca_ext:qualifier xmi:id="_Q9cFogqpEe6ikPJ6ZQ7YGw" name="transport">
+        <id:IdentityReference xmi:id="_Q9d60AqpEe6ikPJ6ZQ7YGw" URI="EBX-SAP-Data-Sync.IdentityProvider" type="subject:SubjectConfiguration"/>
+      </sca_ext:qualifier>
+    </sca_ext:intentMap>
+  </identitySet>
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_JCBuQAqpEe6ikPJ6ZQ7YGw" httpClientVersion="httpcomponents" retryCount="3" idleConnectionTimeout="3000" hystrixCommandName="EBX-SAP-Data-Sync.HttpClientResource" cmdExecutionIsolationStrategy="COUNT_BASED" cmdExecutionIsolationTimeout="10" cmdExecutionIsolationInterruptOnTimeout="true" cmdExecutionIsolationSemaphoreMaxConcRequests="8" cmdCircuitBreakerRequestVolumeThreshold="50" cmdCircuitBreakerSleepWindow="100" cmdCircuitBreakerErrorThresholdPercentage="100" cmdMetricsRollingStatsTime="100" cmdMetricsRollingStatsNumBuckets="60000" cmdMetricsHealthSnapshotInterval="500" tpCoreSize="10" tpMaxQueueSize="60000" tpQueueSizeRejectionThreshold="6000" tpKeepAliveTime="1">
+    <tcpDetails xmi:id="_JCBuQQqpEe6ikPJ6ZQ7YGw" host="34.244.142.248" port="8080"/>
+  </jndi:configuration>
+</jndi:namedResource>

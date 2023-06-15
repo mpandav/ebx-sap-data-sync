@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="urn:ebx-schemas:deployment_1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ebx-schemas:deployment_1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:attribute name="uuid" type="xs:string" />
+  <xs:attribute name="creator" type="xs:string" />
+  <xs:attribute name="lastUser" type="xs:string" />
+  <xs:attribute name="lastTime" type="xs:dateTime" />
+  <xs:attribute name="creationTime" type="xs:dateTime" />
+</xs:schema>

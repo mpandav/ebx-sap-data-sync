@@ -1,0 +1,1318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:r3="http://www.tibco.com/xmlns/sapscalar/2015/05" xmlns:tns="http://www.tibco.com/xmlns/sap/SAPConnectionResource/CSAP_MAT_BOM_CREATE" elementFormDefault="unqualified" targetNamespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/CSAP_MAT_BOM_CREATE" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://www.tibco.com/xmlns/sapscalar/2015/05" schemaLocation="/Schemas/.SAP/SAPSchema.xsd"/>
+    <xsd:element name="RequestInputType" type="tns:RequestInputTypeParam"/>
+    <xsd:complexType name="RequestInputTypeParam">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="sessionID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="timeout" type="xsd:long"/>
+            <xsd:element name="RfcRequest" type="tns:CSAP_MAT_BOM_CREATE_RequestParam"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="RfcRequest" type="tns:CSAP_MAT_BOM_CREATE_RequestParam"/>
+    <xsd:complexType name="CSAP_MAT_BOM_CREATE_RequestParam">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="BOM_USAGE" r3:abapType="C" r3:document="BOM usage" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CHANGE_NO" r3:abapType="C" r3:document="Change number" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FL_CAD" r3:abapType="C" r3:document="Do not write change documents" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FL_COMMIT_AND_WAIT" r3:abapType="C" r3:document="Do not write change documents" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FL_DEFAULT_VALUES" r3:abapType="C" r3:document="Do not write change documents" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FL_NO_CHANGE_DOC" r3:abapType="C" r3:document="Do not write change documents" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="I_STKO" type="tns:STKO_API01"/>
+            <xsd:element minOccurs="1" name="MATERIAL" r3:abapType="C" r3:document="Material" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="18"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PLANT" r3:abapType="C" r3:document="Plant" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REVISION_LEVEL" r3:abapType="C" r3:document="Revision level" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VALID_FROM" r3:abapType="C" r3:document="Valid-from date" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="T_DEP_DATA" type="tns:sequence_lsqb_CSDEP_DAT_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_DESCR" type="tns:sequence_lsqb_CSDEP_DESC_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_DOC" type="tns:sequence_lsqb_CSDEP_DOC_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_ORDER" type="tns:sequence_lsqb_CSDEP_ORD_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_SOURCE" type="tns:sequence_lsqb_CSDEP_SORC_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_LTX_LINE" type="tns:sequence_lsqb_CSLTX_LINE_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_STPO" type="tns:sequence_lsqb_STPO_API01_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_STPU" type="tns:sequence_lsqb_STPU_API01_rsqb_"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="RequestOutputType" type="tns:RequestOutputTypeParam"/>
+    <xsd:complexType name="RequestOutputTypeParam">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="sessionID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CPIC_ID" type="xsd:string"/>
+            <xsd:element name="RfcResponse" type="tns:CSAP_MAT_BOM_CREATE_ResponseParam"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="RfcResponse" type="tns:CSAP_MAT_BOM_CREATE_ResponseParam"/>
+    <xsd:complexType name="CSAP_MAT_BOM_CREATE_ResponseParam">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="BOM_NO" r3:abapType="C" r3:document="Log contains warning messages" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FL_WARNING" r3:abapType="C" r3:document="Log contains warning messages" r3:javaType="java.lang.String" r3:jcoType="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="T_DEP_DATA" type="tns:sequence_lsqb_CSDEP_DAT_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_DESCR" type="tns:sequence_lsqb_CSDEP_DESC_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_DOC" type="tns:sequence_lsqb_CSDEP_DOC_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_ORDER" type="tns:sequence_lsqb_CSDEP_ORD_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_DEP_SOURCE" type="tns:sequence_lsqb_CSDEP_SORC_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_LTX_LINE" type="tns:sequence_lsqb_CSLTX_LINE_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_STPO" type="tns:sequence_lsqb_STPO_API01_rsqb_"/>
+            <xsd:element minOccurs="0" name="T_STPU" type="tns:sequence_lsqb_STPU_API01_rsqb_"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="SAPSystemException" type="tns:CSAP_MAT_BOM_CREATE_FaultParam"/>
+    <xsd:complexType name="CSAP_MAT_BOM_CREATE_FaultParam">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ERROR" type="tns:RFCException"/>
+            <xsd:element minOccurs="0" name="OTHERS" type="tns:RFCException"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="STKO_API01">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="BASE_QUAN" nillable="true" r3:abapType="C" r3:document="Base quantity (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="17"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BASE_UNIT" nillable="true" r3:abapType="C" r3:document="Base unit of measure for BOM" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="34">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_STATUS" nillable="true" r3:abapType="N" r3:document="BOM status" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="40">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ALT_TEXT" nillable="true" r3:abapType="C" r3:document="Alternative BOM Text" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="44">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LABORATORY" nillable="true" r3:abapType="C" r3:document="Laboratory/design office" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="124">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DELETE_IND" nillable="true" r3:abapType="C" r3:document="Deletion flag for BOMs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="130">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_TEXT" nillable="true" r3:abapType="C" r3:document="BOM text" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="132">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_GROUP" nillable="true" r3:abapType="C" r3:document="BOM group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="212">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="18"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AUTH_GROUP" nillable="true" r3:abapType="C" r3:document="Authorization group for bills of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="248">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CAD_IND" nillable="true" r3:abapType="C" r3:document="CAD Indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="256">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ID_GUID" nillable="true" r3:abapType="C" r3:document="Guid external display (char32)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="258">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_CSDEP_DAT_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:CSDEP_DAT"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CSDEP_DAT">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OBJECT_ID" nillable="true" r3:abapType="C" r3:document="BOM object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_NO" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="22">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NODE" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="38">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_COUNT" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="54">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_INTERN" nillable="true" r3:abapType="C" r3:document="Internal name of dependency" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="70">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_EXTERN" nillable="true" r3:abapType="C" r3:document="External Dependency Name" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="130">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_TYPE" nillable="true" r3:abapType="C" r3:document="Dependency type" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="190">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_TYPE2" nillable="true" r3:abapType="C" r3:document="Dependency type - supplement" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="198">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SCE_FLAG" nillable="true" r3:abapType="C" r3:document="Indicator: Dependencies for SCE Format" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="200">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="STATUS" nillable="true" r3:abapType="C" r3:document="Dependency status" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="202">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="GROUP" nillable="true" r3:abapType="C" r3:document="Dependency Group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="204">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="WHR_TO_USE" nillable="true" r3:abapType="C" r3:document="Authorization to Maintain Object Dependencies for Objects" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="224">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FLDELETE" nillable="true" r3:abapType="C" r3:document="Deletion Indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="230">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_CSDEP_DESC_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:CSDEP_DESC"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CSDEP_DESC">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OBJECT_ID" nillable="true" r3:abapType="C" r3:document="BOM object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_NO" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="22">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NODE" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="38">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_COUNT" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="54">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_INTERN" nillable="true" r3:abapType="C" r3:document="Internal name of dependency" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="70">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_EXTERN" nillable="true" r3:abapType="C" r3:document="External Dependency Name" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="130">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LANGUAGE" nillable="true" r3:abapType="C" r3:document="Language Key" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="190">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DESCRIPT" nillable="true" r3:abapType="C" r3:document="Dependency Description" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="192">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FLDELETE" nillable="true" r3:abapType="C" r3:document="Deletion Indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="252">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LANGUAGE_ISO" nillable="true" r3:abapType="C" r3:document="Language according to ISO 639" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="254">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_CSDEP_DOC_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:CSDEP_DOC"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CSDEP_DOC">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OBJECT_ID" nillable="true" r3:abapType="C" r3:document="BOM object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_NO" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="22">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NODE" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="38">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_COUNT" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="54">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_INTERN" nillable="true" r3:abapType="C" r3:document="Internal name of dependency" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="70">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_EXTERN" nillable="true" r3:abapType="C" r3:document="External Dependency Name" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="130">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LANGUAGE" nillable="true" r3:abapType="C" r3:document="Language Key" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="190">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LINE_NO" nillable="true" r3:abapType="N" r3:document="Row Number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="192">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TXT_FORM" nillable="true" r3:abapType="C" r3:document="Tag column" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="200">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TXT_LINE" nillable="true" r3:abapType="C" r3:document="Text Line" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="204">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="132"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LANGUAGE_ISO" nillable="true" r3:abapType="C" r3:document="Language according to ISO 639" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="468">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_CSDEP_ORD_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:CSDEP_ORD"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CSDEP_ORD">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OBJECT_ID" nillable="true" r3:abapType="C" r3:document="BOM object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_NO" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="22">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NODE" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="38">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_COUNT" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="54">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_INTERN" nillable="true" r3:abapType="C" r3:document="Internal name of dependency" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="70">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_EXTERN" nillable="true" r3:abapType="C" r3:document="External Dependency Name" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="130">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_LINENO" nillable="true" r3:abapType="N" r3:document="Counter for sorting object allocations" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="190">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_CSDEP_SORC_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:CSDEP_SORC"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CSDEP_SORC">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OBJECT_ID" nillable="true" r3:abapType="C" r3:document="BOM object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_NO" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="22">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NODE" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="38">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_COUNT" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="54">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_INTERN" nillable="true" r3:abapType="C" r3:document="Internal name of dependency" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="70">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DEP_EXTERN" nillable="true" r3:abapType="C" r3:document="External Dependency Name" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="130">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LINE_NO" nillable="true" r3:abapType="N" r3:document="Row Number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="190">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LINE" nillable="true" r3:abapType="C" r3:document="Line of object dependency source (72 characters)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="198">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="72"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_CSLTX_LINE_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:CSLTX_LINE"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CSLTX_LINE">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OBJECT_ID" nillable="true" r3:abapType="C" r3:document="BOM object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BOM_NO" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="22">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NODE" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="38">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_COUNT" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="54">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TDFORMAT" nillable="true" r3:abapType="C" r3:document="Tag column" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="70">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TDLINE" nillable="true" r3:abapType="C" r3:document="Text Line" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="74">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="132"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_STPO_API01_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:STPO_API01"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="STPO_API01">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ITEM_CATEG" nillable="true" r3:abapType="C" r3:document="Item Category (Bill of Material)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_NO" nillable="true" r3:abapType="C" r3:document="BOM Item Number" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="COMPONENT" nillable="true" r3:abapType="C" r3:document="BOM component" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="10">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="18"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="COMP_QTY" nillable="true" r3:abapType="C" r3:document="Component quantity (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="46">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="18"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="COMP_UNIT" nillable="true" r3:abapType="C" r3:document="Component unit of measure" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="82">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FIXED_QTY" nillable="true" r3:abapType="C" r3:document="Fixed qty" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="88">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_TEXT1" nillable="true" r3:abapType="C" r3:document="BOM Item Text (Line 1)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="90">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_TEXT2" nillable="true" r3:abapType="C" r3:document="BOM item text (line 2)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="170">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SORTSTRING" nillable="true" r3:abapType="C" r3:document="Sort String" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="250">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REL_COST" nillable="true" r3:abapType="C" r3:document="Indicator: item relevant to costing" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="270">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REL_ENGIN" nillable="true" r3:abapType="C" r3:document="Indicator: item relevant to engineering" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="272">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REL_PMAINT" nillable="true" r3:abapType="C" r3:document="Indicator: item relevant to plant maintenance" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="274">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REL_PROD" nillable="true" r3:abapType="C" r3:document="Indicator: item relevant to production" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="276">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REL_SALES" nillable="true" r3:abapType="C" r3:document="Indicator: item relevant to sales" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="278">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SPARE_PART" nillable="true" r3:abapType="C" r3:document="Indicator: spare part" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="280">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MAT_PROVIS" nillable="true" r3:abapType="C" r3:document="Material Provision Indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="282">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BULK_MAT" nillable="true" r3:abapType="C" r3:document="Indicator: Bulk Material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="284">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REC_ALLOWD" nillable="true" r3:abapType="C" r3:document="Indicator: recursiveness allowed" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="286">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="COMP_SCRAP" nillable="true" r3:abapType="C" r3:document="Component scrap in percent (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="288">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OP_SCRAP" nillable="true" r3:abapType="C" r3:document="Operation scrap (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="300">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OP_NET_IND" nillable="true" r3:abapType="C" r3:document="Indicator: Net scrap" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="312">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DISTR_KEY" nillable="true" r3:abapType="C" r3:document="Distribution key for component consumption" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="314">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EXPL_TYPE" nillable="true" r3:abapType="C" r3:document="Explosion type" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="322">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SPPROCTYPE" nillable="true" r3:abapType="C" r3:document="Special procurement type for BOM item" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="326">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SUPPLYAREA" nillable="true" r3:abapType="C" r3:document="Supply Area" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="330">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ISSUE_LOC" nillable="true" r3:abapType="C" r3:document="Issue location for production order" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="350">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LEAD_TIME" nillable="true" r3:abapType="C" r3:document="Follow-up time (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="358">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OP_LEAD_TM" nillable="true" r3:abapType="C" r3:document="Lead-time offset for operation (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="366">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OP_LT_UNIT" nillable="true" r3:abapType="C" r3:document="Unit for lead-time offset for operation" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="374">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CO_PRODUCT" nillable="true" r3:abapType="C" r3:document="Indicator: co-product" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="380">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DISCON_GRP" nillable="true" r3:abapType="C" r3:document="Discontinuation group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="382">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FOLLOW_GRP" nillable="true" r3:abapType="C" r3:document="Follow-up group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="386">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AI_GROUP" nillable="true" r3:abapType="C" r3:document="Alternative item: group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="390">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AI_STRATEG" nillable="true" r3:abapType="C" r3:document="Alternative item: strategy" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="394">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AI_PRIO" nillable="true" r3:abapType="C" r3:document="Alternative Item: Ranking Order" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="396">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="USAGE_PROB" nillable="true" r3:abapType="C" r3:document="Usage probability in % (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="400">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REFPOINT" nillable="true" r3:abapType="C" r3:document="Reference point for BOM transfer" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="406">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PM_ASSMBLY" nillable="true" r3:abapType="C" r3:document="PM assembly indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="446">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="COST_ELEM" nillable="true" r3:abapType="C" r3:document="Cost element" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="448">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DELIV_TIME" nillable="true" r3:abapType="C" r3:document="Delivery time in days" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="468">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="GRP_TIME" nillable="true" r3:abapType="C" r3:document="Processing time for goods receipt in days    (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="474">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MAT_GROUP" nillable="true" r3:abapType="C" r3:document="Material Group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="480">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="9"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PRICE" nillable="true" r3:abapType="C" r3:document="Price (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="498">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="14"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PRICE_UNIT" nillable="true" r3:abapType="C" r3:document="Price unit (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="526">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CURRENCY" nillable="true" r3:abapType="C" r3:document="Currency key (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="538">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PURCH_GRP" nillable="true" r3:abapType="C" r3:document="Purchasing Group" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="548">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PURCH_ORG" nillable="true" r3:abapType="C" r3:document="Purchasing Organization" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="554">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VENDOR" nillable="true" r3:abapType="C" r3:document="Account Number of Vendor or Creditor" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="562">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_NO" nillable="true" r3:abapType="C" r3:document="Number of variable-size items (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="582">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="17"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_QTY" nillable="true" r3:abapType="C" r3:document="Quantity of variable-size item (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="616">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="17"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_SIZE1" nillable="true" r3:abapType="C" r3:document="Size 1 (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="650">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="17"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_SIZE2" nillable="true" r3:abapType="C" r3:document="Size 2 (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="684">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="17"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_SIZE3" nillable="true" r3:abapType="C" r3:document="Size 3 (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="718">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="17"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_SZUNIT" nillable="true" r3:abapType="C" r3:document="Unit of measure for sizes 1 to 3" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="752">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VSI_FORMUL" nillable="true" r3:abapType="C" r3:document="Formula key" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="758">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DOCUMENT" nillable="true" r3:abapType="C" r3:document="Document number" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="762">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="25"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DOC_TYPE" nillable="true" r3:abapType="C" r3:document="Document Type" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="812">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DOC_PART" nillable="true" r3:abapType="C" r3:document="Document Part" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="818">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DOC_VERS" nillable="true" r3:abapType="C" r3:document="Document Version" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="824">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CLASS" nillable="true" r3:abapType="C" r3:document="Class number" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="828">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="18"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CLASS_TYPE" nillable="true" r3:abapType="C" r3:document="Class Type" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="864">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RES_ITM_CT" nillable="true" r3:abapType="C" r3:document="Resulting item category" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="870">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SEL_COND" nillable="true" r3:abapType="C" r3:document="Indicator: classification as selection condition" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="872">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REQD_COMP" nillable="true" r3:abapType="C" r3:document="Required Component" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="874">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MULT_SELEC" nillable="true" r3:abapType="C" r3:document="Multiple Selection Allowed" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="876">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="REL_HLCONF" nillable="true" r3:abapType="C" r3:document="Indicator: high-level configuration" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="878">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CAD_IND" nillable="true" r3:abapType="C" r3:document="CAD Indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="880">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITM_IDENT" nillable="true" r3:abapType="C" r3:document="Item ID" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="882">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ITEM_GUID" nillable="true" r3:abapType="C" r3:document="Guid external display (char32)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="898">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VALID_FROM" nillable="true" r3:abapType="C" r3:document="Valid-From Date (BTCI)" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="962">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CHANGE_NO" nillable="true" r3:abapType="C" r3:document="Change Number" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="982">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IDENTIFIER" nillable="true" r3:abapType="C" r3:document="Customer-specific object identifier for APIs" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="1006">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CUFACTOR" nillable="true" r3:abapType="N" r3:document="CU: Number of CU Instances" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="1026">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="sequence_lsqb_STPU_API01_rsqb_">
+        <xsd:sequence>
+            <xsd:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:STPU_API01"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="STPU_API01">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="POINTER" nillable="true" r3:abapType="I" r3:document="Natural Number" r3:javaType="int" r3:jcoType="8" r3:offset="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:int"/>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MANDT" nillable="true" r3:abapType="C" r3:document="Client" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="4">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="STLTY" nillable="true" r3:abapType="C" r3:document="BOM category" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="10">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="STLNR" nillable="true" r3:abapType="C" r3:document="Bill of material" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="12">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="STLKN" nillable="true" r3:abapType="N" r3:document="BOM item node number" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="28">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="STPOZ" nillable="true" r3:abapType="N" r3:document="Internal counter" r3:javaType="java.lang.String" r3:jcoType="6" r3:offset="44">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UPOSZ" nillable="true" r3:abapType="C" r3:document="Subitem Number" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="60">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UPMNG" nillable="true" r3:abapType="P" r3:document="Sub-item quantity" r3:javaType="java.math.BigDecimal" r3:jcoType="2" r3:offset="68">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="13"/>
+                        <xsd:fractionDigits value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EBORT" nillable="true" r3:abapType="C" r3:document="Installation Point for Subitem" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="76">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UPTXT" nillable="true" r3:abapType="C" r3:document="BOM sub-item text" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="116">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VBKZ" nillable="true" r3:abapType="C" r3:document="Update indicator" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="196">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SELKZ" nillable="true" r3:abapType="C" r3:document="Selection of valid records" r3:javaType="java.lang.String" r3:jcoType="0" r3:offset="198">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RFCException">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="msg" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="msgCode" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

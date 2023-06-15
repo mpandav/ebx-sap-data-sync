@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tns.tibco.com/bw/json/1686756848826" elementFormDefault="qualified" targetNamespace="http://tns.tibco.com/bw/json/1686756848826">
+  <complexType name="Update-Master-RecordElementType">
+    <sequence>
+      <element maxOccurs="1" minOccurs="0" name="content">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="material">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="content" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="targetSystem">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="content" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="targetSystemId">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="content" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="lastupdate">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="content" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="Update-Master-RecordElement" type="tns:Update-Master-RecordElementType"/>
+</schema>

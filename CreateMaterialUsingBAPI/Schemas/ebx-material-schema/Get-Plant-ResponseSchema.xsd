@@ -15,7 +15,7 @@
                     <xs:element name="id">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:unsignedByte" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -42,7 +42,7 @@
                     <xs:element name="MRPController">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string"/>
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -50,7 +50,7 @@
                     <xs:element name="deliveryTimeInDays">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>

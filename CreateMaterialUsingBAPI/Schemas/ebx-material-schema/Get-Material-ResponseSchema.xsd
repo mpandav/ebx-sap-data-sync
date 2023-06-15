@@ -36,7 +36,7 @@
                     <xs:element name="SalesText">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -73,7 +73,7 @@
                     <xs:element name="matOwner">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string"/>
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -88,7 +88,7 @@
                     <xs:element name="phaseOutDate">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -132,42 +132,42 @@
                                             <xs:element name="old_mat_no">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="division">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="lab_design">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="prod_memo">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="prod_hier">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="x_plant_matl_status">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                   <xs:element name="selector" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
@@ -175,21 +175,21 @@
                                             <xs:element name="valid_from">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="assign-effect-vals">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="genItemCatGroup">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -208,7 +208,7 @@
                                             <xs:element name="authorization-group">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -227,7 +227,7 @@
                                             <xs:element name="gross_wt">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" type="xs:unsignedByte" />
+                                                  <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -241,42 +241,42 @@
                                             <xs:element name="net_weight">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" type="xs:unsignedByte" />
+                                                  <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="volume">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="volumeunit">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="size_dim">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="ean_upc">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="ean_cat">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -295,7 +295,7 @@
                                             <xs:element name="matl-grp-pack-matls">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -321,7 +321,7 @@
                     <xs:element name="sourceSystem">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string" />
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -329,14 +329,14 @@
                     <xs:element name="sourceSystemId">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="duplicateTo">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string"/>
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -344,7 +344,7 @@
                     <xs:element name="similarTo">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string" />
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -352,7 +352,7 @@
                     <xs:element name="successorOf">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" />
+                          <xs:element name="content" type="xs:string"/>
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -360,14 +360,14 @@
                     <xs:element name="validFrom">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:date" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="validTo">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:date" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>

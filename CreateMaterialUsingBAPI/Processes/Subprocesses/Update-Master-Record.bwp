@@ -1011,8 +1011,8 @@
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <styles lineColor="9983" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="9983" fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[0, 25, 0, -85]$[0, 86, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
@@ -1092,9 +1092,9 @@
                 <bpws:link name="StartToconsoleLogger-In" tibex:linkType="SUCCESS"/>
                 <bpws:link name="consoleLogger-InToRenderJSON" tibex:linkType="SUCCESS"/>
                 <bpws:link
-                    name="UpdateMasterRecoToCopy_1_consoleLogger-In" tibex:linkType="SUCCESS"/>
+                    name="UpdateMasterRecoToCopy_1_consoleLogger-In" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="Copy_1_consoleLogger-InToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="UpdateMasterRecoToCopy_1_InLog" tibex:linkType="SUCCESS"/>
+                <bpws:link name="UpdateMasterRecoToCopy_1_InLog" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="Copy_1_InLogToThrow" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
@@ -1143,8 +1143,20 @@
                         <bpws:target linkName="RenderJSONToUpdateMasterReco"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="UpdateMasterRecoToCopy_1_consoleLogger-In"/>
-                        <bpws:source linkName="UpdateMasterRecoToCopy_1_InLog"/>
+                        <bpws:source linkName="UpdateMasterRecoToCopy_1_consoleLogger-In">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$UpdateMasterReco/statusCode=201" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$UpdateMasterReco/statusCode=201]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="UpdateMasterRecoToCopy_1_InLog">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$UpdateMasterReco/statusCode!=201" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$UpdateMasterReco/statusCode!=201]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding

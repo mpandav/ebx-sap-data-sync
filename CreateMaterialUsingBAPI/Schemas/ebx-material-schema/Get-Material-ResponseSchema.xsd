@@ -15,14 +15,14 @@
                     <xs:element name="mandant">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:unsignedShort" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="matnr">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:unsignedByte" />
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -73,7 +73,9 @@
                     <xs:element name="matOwner">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string"/>
+                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="label" type="xs:string" />
+                          <xs:element name="details" type="xs:string" />
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -88,7 +90,7 @@
                     <xs:element name="phaseOutDate">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string"/>
+                          <xs:element name="content" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -146,7 +148,7 @@
                                             <xs:element name="lab_design">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
+                                                  <xs:element name="content" type="xs:string"/>
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -182,7 +184,7 @@
                                             <xs:element name="assign-effect-vals">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
+                                                  <xs:element name="content" type="xs:boolean" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -262,7 +264,7 @@
                                             <xs:element name="size_dim">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
+                                                  <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -295,7 +297,7 @@
                                             <xs:element name="matl-grp-pack-matls">
                                               <xs:complexType>
                                                 <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
+                                                  <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
@@ -322,6 +324,8 @@
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="content" type="xs:string" />
+                          <xs:element name="label" type="xs:string" />
+                          <xs:element name="details" type="xs:string" />
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
@@ -329,7 +333,7 @@
                     <xs:element name="sourceSystemId">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string"/>
+                          <xs:element name="content" type="xs:unsignedShort" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -344,7 +348,7 @@
                     <xs:element name="similarTo">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="content" />
                           <xs:element name="selector" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>

@@ -4,58 +4,70 @@
   <xs:import schemaLocation="schema1.xsd" namespace="urn:ebx-schemas:deployment_1.0" />
   <xs:element name="root">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element name="Material">
           <xs:complexType>
-            <xs:sequence>
-              <xs:element name="mandant" type="xs:string" />
-              <xs:element name="matnr" type="xs:string" />
-              <xs:element name="material-desc" type="xs:string" />
-              <xs:element name="industrySector" type="xs:string" />
-              <xs:element name="SalesText" type="xs:string" />
-              <xs:element name="mat-type" type="xs:string" />
-              <xs:element name="matl_group" type="xs:string" />
-              <xs:element name="phasedOut" type="xs:boolean" />
-              <xs:element name="recordStatus" type="xs:string" />
-              <xs:element name="recordCreated" type="xs:boolean" />
-              <xs:element name="basic-1">
+            <xs:all>
+              <xs:element name="mandant" type="xs:string" minOccurs="0"/>
+              <xs:element name="matnr" type="xs:string" minOccurs="0"/>
+              <xs:element name="material-desc" type="xs:string" minOccurs="0"/>
+              <xs:element name="SalesText" type="xs:string" minOccurs="0"/>
+              <xs:element name="industrySector" type="xs:string" minOccurs="0"/>
+              <xs:element name="mat-type" type="xs:string" minOccurs="0"/>
+              <xs:element name="matl_group" type="xs:string" minOccurs="0"/>
+              <xs:element name="matOwner" type="xs:string" minOccurs="0"/>
+              <xs:element name="phasedOut" type="xs:boolean" minOccurs="0"/>
+              <xs:element name="phaseOutDate" type="xs:date" minOccurs="0"/>
+              <xs:element name="recordStatus" type="xs:string" minOccurs="0"/>
+              <xs:element name="recordCreated" type="xs:boolean" minOccurs="0"/>
+              <xs:element name="basic-1" minOccurs="0">
                 <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="general-data">
+                  <xs:all>
+                    <xs:element name="general-data" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="base_uom" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="base_uom" type="xs:string" minOccurs="0"/>
+                          <xs:element name="assign-effect-vals" type="xs:boolean" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="dimensions">
+                    <xs:element name="dimensions" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="gross_wt" type="xs:string" />
-                          <xs:element name="unit_of_wt" type="xs:string" />
-                          <xs:element name="net_weight" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="gross_wt" type="xs:string" minOccurs="0"/>
+                          <xs:element name="unit_of_wt" type="xs:string" minOccurs="0"/>
+                          <xs:element name="net_weight" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                  </xs:sequence>
+                    <xs:element name="packaging-material-data" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="matl-grp-pack-matls" type="xs:string" minOccurs="0"/>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:all>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="validFrom" type="xs:string" />
-              <xs:element name="validTo" type="xs:string" />
-            </xs:sequence>
-            <xs:attribute ref="ebxd:creationTime" use="required" />
-            <xs:attribute ref="ebxd:creator" use="required" />
-            <xs:attribute ref="ebxd:lastTime" use="required" />
-            <xs:attribute ref="ebxd:lastUser" use="required" />
+              <xs:element name="sourceSystem" type="xs:string" minOccurs="0"/>
+              <xs:element name="sourceSystemId" type="xs:string" minOccurs="0"/>
+              <xs:element name="validFrom" type="xs:string" minOccurs="0"/>
+              <xs:element name="validTo" type="xs:string" minOccurs="0"/>
+            </xs:all>
             <xs:attribute ref="ebxd:uuid" use="required" />
+            <xs:attribute ref="ebxd:creator" use="required" />
+            <xs:attribute ref="ebxd:lastUser" use="required" />
+            <xs:attribute ref="ebxd:lastTime" use="required" />
+            <xs:attribute ref="ebxd:creationTime" use="required" />
           </xs:complexType>
         </xs:element>
-      </xs:sequence>
-      <xs:attribute ref="ebxd:creationTime" use="required" />
-      <xs:attribute ref="ebxd:creator" use="required" />
-      <xs:attribute ref="ebxd:lastTime" use="required" />
-      <xs:attribute ref="ebxd:lastUser" use="required" />
+      </xs:all>
       <xs:attribute ref="ebxd:uuid" use="required" />
+      <xs:attribute ref="ebxd:creator" use="required" />
+      <xs:attribute ref="ebxd:lastUser" use="required" />
+      <xs:attribute ref="ebxd:lastTime" use="required" />
+      <xs:attribute ref="ebxd:creationTime" use="required" />
     </xs:complexType>
   </xs:element>
 </xs:schema>

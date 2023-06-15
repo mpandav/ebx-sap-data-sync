@@ -12,6 +12,7 @@
               <xs:element name="matnr" type="xs:string" />
               <xs:element name="material-desc" type="xs:string" />
               <xs:element name="industrySector" type="xs:string" />
+              <xs:element name="SalesText" type="xs:string" />
               <xs:element name="mat-type" type="xs:string" />
               <xs:element name="matl_group" type="xs:string" />
               <xs:element name="phasedOut" type="xs:boolean" />

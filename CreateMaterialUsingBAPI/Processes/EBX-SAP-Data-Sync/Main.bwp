@@ -49,14 +49,19 @@
                 <variable>Create-SAP-Record</variable>
             </endingVariables>
         </task>
-        <task name="LogEvent">
+        <task name="LogStart">
             <endingVariables>
-                <variable>LogEvent-input</variable>
+                <variable>LogStart-input</variable>
             </endingVariables>
         </task>
-        <task name="Log-All-Exceptions">
+        <task name="LogEnd">
             <endingVariables>
-                <variable>Log-All-Exceptions-input</variable>
+                <variable>LogEnd-input</variable>
+            </endingVariables>
+        </task>
+        <task name="catchAll-Exception">
+            <endingVariables>
+                <variable>catchAll-Exception-input</variable>
                 <variable>FaultDetails</variable>
             </endingVariables>
         </task>
@@ -511,22 +516,6 @@
                 </choice>
             </complexType>
         </schema>
-        <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/pe/LogWithEventActivitySchema"
-            xmlns:tns="http://www.tibco.com/pe/LogWithEventActivitySchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:complexType name="LogParametersType">
-                <xs:sequence>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="msgCode" type="xs:string"/>
-                    <xs:element form="unqualified" name="eventType" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="logLevel" type="xs:string"/>
-                    <xs:element form="unqualified" name="message" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="ActivityInput" type="tns:LogParametersType"/>
-        </xs:schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="mpandav"
         createdOn="Thu Jun 15 07:07:04 CEST 2023" description=""
@@ -812,6 +801,42 @@
                                     <layoutConstraint x="87"
                                     xsi:type="notation:Bounds" y="114"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
+                                    <layoutConstraint x="751"
+                                    xsi:type="notation:Bounds" y="114"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -826,7 +851,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="281"
-                                    width="818" xsi:type="notation:Bounds"/>
+                                    width="884" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -836,7 +861,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="237" width="821" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="281" width="887" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -895,8 +920,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="237"
-                                    xsi:type="notation:Bounds" y="21"/>
+                                    x="284"
+                                    xsi:type="notation:Bounds" y="15"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -912,7 +937,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
                                     <layoutConstraint
-                                    height="129" width="720" xsi:type="notation:Bounds"/>
+                                    height="109" width="786" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -921,12 +946,11 @@
                                     fontName=".AppleSystemUIFont"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles collapsed="true"
-                                    restoreHeight="139"
+                                    <styles restoreHeight="139"
                                     restoreWidth="771" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
-                                    <layoutConstraint height="22"
-                                    width="771" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="115"
+                                    width="837" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -936,8 +960,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="44" width="781"
-                                x="22" xsi:type="notation:Bounds" y="237"/>
+                            <layoutConstraint height="141" width="847"
+                                x="22" xsi:type="notation:Bounds" y="216"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -947,7 +971,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="282" width="821" x="1"
+                    <layoutConstraint height="358" width="887" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -956,7 +980,7 @@
             </children>
             <styles fontName=".AppleSystemUIFont" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="378" width="1163" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="410" width="1229" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1026,6 +1050,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[25, -20, -58, 48]$[59, -48, -24, 20]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints points="[25, 0, -92, 0]$[93, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1038,6 +1073,8 @@
             namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1686747150555" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.com/namespaces/tns/1686808031661" prefix="tns4"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686744634391"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
@@ -1081,9 +1118,9 @@
             name="Update-Master-Record-input" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
-        <bpws:variable element="ns7:ActivityInput"
-            name="Log-All-Exceptions-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:Log" name="LogEvent-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:Log" name="LogStart-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:Log" name="LogEnd-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:Log" name="catchAll-Exception-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1101,34 +1138,18 @@
                     <bpws:flow name="flow1">
                         <bpws:links/>
                         <bpws:extensionActivity>
-                            <tibex:activityExtension
-                                inputVariable="Log-All-Exceptions-input"
-                                name="Log-All-Exceptions"
-                                tibex:xpdlId="ad858389-0b7e-413e-863f-d00419bce988" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                            <tibex:extActivity
+                                inputVariable="catchAll-Exception-input"
+                                name="catchAll-Exception"
+                                tibex:xpdlId="a4c55018-681f-4473-9213-74c676c54e2f"
+                                type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/LogWithEventActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;Log-All-Exceptions-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;eventType>&lt;xsl:value-of select=&quot;$FaultDetails/MsgCode&quot;/>&lt;/eventType>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;###### EXCEPTIONS  : &amp;quot;,tib:render-xml($FaultDetails, false(), false()))&quot;/>&lt;/message>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    <tibex:inputBinding coercion=""
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;consoleLogger-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;####### Exception Occurred  #########&amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails, false(), false())&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
-                                <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    controlBy="Application"
-                                    controlByEventType="true"
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                </tibex:config>
-                            </tibex:activityExtension>
+                                <tibex:CallProcess
+                                    subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                            </tibex:extActivity>
                         </bpws:extensionActivity>
                     </bpws:flow>
                 </bpws:scope>
@@ -1143,6 +1164,8 @@
                     name="Create-SAP-RecordToUpdate-Master-Record" tibex:linkType="SUCCESS"/>
                 <bpws:link name="consoleLoggerToParseXml" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JMSReceiveMessageToLogEvent" tibex:linkType="SUCCESS"/>
+                <bpws:link
+                    name="Update-Master-RecordToCopy_1_LogEvent-Start" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1222,7 +1245,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseXml&quot;/>&#xa;    &lt;xsl:template name=&quot;Get-Material-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:QueryData>&#xa;            &lt;tns4:mandant>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/mandant&quot;/>&#xa;            &lt;/tns4:mandant>&#xa;            &lt;tns4:matnr>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/matnr&quot;/>&#xa;            &lt;/tns4:matnr>&#xa;        &lt;/tns4:QueryData>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseXml&quot;/>&#xa;    &lt;xsl:template name=&quot;Get-Material-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:QueryData>&#xa;            &lt;tns5:mandant>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/mandant&quot;/>&#xa;            &lt;/tns5:mandant>&#xa;            &lt;tns5:matnr>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/matnr&quot;/>&#xa;            &lt;/tns5:matnr>&#xa;        &lt;/tns5:QueryData>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="Subprocesses.Get-Material" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1241,7 +1264,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseXml&quot;/>&#xa;    &lt;xsl:template name=&quot;Get-Plant-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:QueryData>&#xa;            &lt;tns4:mandant>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/mandant&quot;/>&#xa;            &lt;/tns4:mandant>&#xa;            &lt;tns4:matnr>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/matnr&quot;/>&#xa;            &lt;/tns4:matnr>&#xa;        &lt;/tns4:QueryData>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseXml&quot;/>&#xa;    &lt;xsl:template name=&quot;Get-Plant-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:QueryData>&#xa;            &lt;tns5:mandant>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/mandant&quot;/>&#xa;            &lt;/tns5:mandant>&#xa;            &lt;tns5:matnr>&#xa;                &lt;xsl:value-of select=&quot;$ParseXml/Material/matnr&quot;/>&#xa;            &lt;/tns5:matnr>&#xa;        &lt;/tns5:QueryData>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="Subprocesses.Get-Plant" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1277,17 +1300,20 @@
                     <bpws:targets>
                         <bpws:target linkName="Create-SAP-RecordToUpdate-Master-Record"/>
                     </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="Update-Master-RecordToCopy_1_LogEvent-Start"/>
+                    </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686746457503&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/json/1686756848826&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseXml&quot;/>&#xa;    &lt;xsl:param name=&quot;Create-SAP-Record&quot;/>&#xa;    &lt;xsl:template name=&quot;Update-Master-Record-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Update-Master-RecordElement>&#xa;            &lt;tns1:content>&#xa;                &lt;tns1:material>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;concat($ParseXml/Material/mandant,&amp;quot;|&amp;quot;,$ParseXml/Material/matnr)&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:material>&#xa;                &lt;tns1:targetSystem>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;SAP_R3&amp;quot;&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:targetSystem>&#xa;                &lt;tns1:targetSystemId>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;$Create-SAP-Record/tns4:Material.ID&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:targetSystemId>&#xa;                &lt;tns1:lastupdate>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;current-dateTime()&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:lastupdate>&#xa;            &lt;/tns1:content>&#xa;        &lt;/tns1:Update-Master-RecordElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1686746457503&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/json/1686756848826&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseXml&quot;/>&#xa;    &lt;xsl:param name=&quot;Create-SAP-Record&quot;/>&#xa;    &lt;xsl:template name=&quot;Update-Master-Record-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Update-Master-RecordElement>&#xa;            &lt;tns1:content>&#xa;                &lt;tns1:material>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;concat($ParseXml/Material/mandant,&amp;quot;|&amp;quot;,$ParseXml/Material/matnr)&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:material>&#xa;                &lt;tns1:targetSystem>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;SAP_R3&amp;quot;&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:targetSystem>&#xa;                &lt;tns1:targetSystemId>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;$Create-SAP-Record/tns5:Material.ID&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:targetSystemId>&#xa;                &lt;tns1:lastupdate>&#xa;                    &lt;tns1:content>&#xa;                        &lt;xsl:value-of select=&quot;current-dateTime()&quot;/>&#xa;                    &lt;/tns1:content>&#xa;                &lt;/tns1:lastupdate>&#xa;            &lt;/tns1:content>&#xa;        &lt;/tns1:Update-Master-RecordElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="Subprocesses.Update-Master-Record" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:extActivity inputVariable="LogEvent-input"
-                    name="LogEvent"
+                <tibex:extActivity inputVariable="LogStart-input"
+                    name="LogStart"
                     tibex:xpdlId="cda32f68-2129-45b0-812f-969fb3cda8e3"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
@@ -1298,7 +1324,24 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JMSReceiveMessage&quot;/>&lt;xsl:template name=&quot;LogEvent-input&quot; match=&quot;/&quot;>&lt;tns:Log>&lt;tns:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## EBX Event Received ######### &amp;quot;&quot;/>&lt;/tns:Type>&lt;tns:Data>&lt;xsl:value-of select=&quot;tib:render-xml($JMSReceiveMessage/Body, false(), false())&quot;/>&lt;/tns:Data>&lt;/tns:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JMSReceiveMessage&quot;/>&lt;xsl:template name=&quot;LogStart-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## EBX Event Received ######### &amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;string(tib:trim($JMSReceiveMessage/Body))&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess spawn="true"
+                        subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="LogEnd-input"
+                    name="LogEnd"
+                    tibex:xpdlId="b5c91295-ca9a-412e-8084-3939f04227cf"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="Update-Master-RecordToCopy_1_LogEvent-Start"/>
+                    </bpws:targets>
+                    <bpws:sources/>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding coercion=""
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;LogEnd-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Event Consumed Successfully, Confirming the Message ######### &amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess spawn="true"
                         subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>

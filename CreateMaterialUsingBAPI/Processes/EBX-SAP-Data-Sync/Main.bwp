@@ -958,7 +958,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="318"
+                                    x="325"
                                     xsi:type="notation:Bounds" y="14"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>

@@ -21,11 +21,6 @@
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <tibex:VariableDescriptor type="MemorySaving">
-        <task name="Start">
-            <endingVariables>
-                <variable>Start</variable>
-            </endingVariables>
-        </task>
         <task name="End">
             <endingVariables>
                 <variable>Create-Material</variable>
@@ -34,6 +29,7 @@
         <task name="Create-Material">
             <endingVariables>
                 <variable>Create-Material-input</variable>
+                <variable>Start</variable>
             </endingVariables>
         </task>
         <task name="Commit-Transaction">
@@ -511,7 +507,7 @@
             </children>
             <styles fontName=".AppleSystemUIFont" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="460" width="1150" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="365" width="1150" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -581,7 +577,7 @@
             <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints
-                points="[0, -24, -651, -24]$[0, -87, -651, -87]$[651, -87, 0, -87]$[651, -24, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+                points="[10, -24, -641, -24]$[10, -87, -641, -87]$[651, -87, 0, -87]$[651, -24, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -593,6 +589,12 @@
             namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_TRANSACTION_ROLLBACK" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1686746457503" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_MATERIAL_SAVEDATA" prefix="ns0"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem
+            namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_MATERIAL_SAVEDATA"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_TRANSACTION_COMMIT"/>
@@ -645,7 +647,7 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToInvokeRFCBAPIinSAP" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="StartToInvokeRFCBAPIinSAP" tibex:linkType="SUCCESS"/>
                 <bpws:link
                     name="InvokeRFCBAPIinSAPToInvokeRFCBAPIinSAP1_Success"
                     tibex:label="Success" tibex:linkType="SUCCESSWITHCONDITION"/>
@@ -654,7 +656,7 @@
                     name="Create-MaterialToInvokeRFCBAPIinSAP_Failure"
                     tibex:label="Failure" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="InvokeRFCBAPIinSAPToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="StartToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToEnd" tibex:linkType="SUCCESSWITHNOCONDITION"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -663,13 +665,15 @@
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToInvokeRFCBAPIinSAP">
+                            <tibex:DesignExpression/>
+                        </bpws:source>
+                        <bpws:source linkName="StartToEnd">
                             <tibex:DesignExpression>
                                 <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
                             <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
                         </bpws:source>
-                        <bpws:source linkName="StartToEnd"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -732,7 +736,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/invokerequestresponse+dc984fb9-6b92-4893-b860-6582cb2e91d9+Input&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Create-Material-input&quot; match=&quot;/&quot;>&lt;ns0:RequestInputType xmlns:ns0=&quot;http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_MATERIAL_SAVEDATA&quot;>&lt;RfcRequest>&lt;HEADDATA/>&lt;/RfcRequest>&lt;/ns0:RequestInputType>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns0=&quot;http://www.tibco.com/xmlns/sap/SAPConnectionResource/BAPI_MATERIAL_SAVEDATA&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1686747150555&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;Create-Material-input&quot; match=&quot;/&quot;>&lt;ns0:RequestInputType>&lt;RfcRequest>&lt;CLIENTDATA>&lt;MATL_GROUP>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:matl_group/tns:content&quot;/>&lt;/MATL_GROUP>&lt;BASE_UOM>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:basic-1/tns:content/tns:general-data/tns:content/tns:base_uom/tns:content&quot;/>&lt;/BASE_UOM>&lt;NET_WEIGHT>&lt;xsl:value-of select=&quot;xsd:decimal($Start/tns:Material/tns:rows/tns:content/tns:basic-1/tns:content/tns:dimensions/tns:content/tns:gross_wt/tns:content)&quot;/>&lt;/NET_WEIGHT>&lt;UNIT_OF_WT>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:basic-1/tns:content/tns:dimensions/tns:content/tns:unit_of_wt/tns:content&quot;/>&lt;/UNIT_OF_WT>&lt;DIVISION>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:basic-1/tns:content/tns:general-data/tns:content/tns:division/tns:content&quot;/>&lt;/DIVISION>&lt;/CLIENTDATA>&lt;CLIENTDATAX>&lt;MATL_GROUP>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/MATL_GROUP>&lt;BASE_UOM>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/BASE_UOM>&lt;NET_WEIGHT>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/NET_WEIGHT>&lt;UNIT_OF_WT>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/UNIT_OF_WT>&lt;DIVISION>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/DIVISION>&lt;/CLIENTDATAX>&lt;HEADDATA>&lt;MATERIAL>&lt;xsl:value-of select=&quot;tib:right(concat('000000000000000000',xsd:string($Start/tns:Material/tns:rows/tns:content/tns:matnr/tns:content)), 10)&quot;/>&lt;/MATERIAL>&lt;IND_SECTOR>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:industrySector/tns:content&quot;/>&lt;/IND_SECTOR>&lt;MATL_TYPE>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:mat-type/tns:content&quot;/>&lt;/MATL_TYPE>&lt;BASIC_VIEW>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/BASIC_VIEW>&lt;SALES_VIEW>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:SalesText/tns:content&quot;/>&lt;/SALES_VIEW>&lt;/HEADDATA>&lt;PLANTDATA>&lt;PLANT>&lt;xsl:value-of select=&quot;substring-after($Start/tns:Plant/tns:rows/tns:content/tns:plant/tns:content, &amp;quot;|&amp;quot;)&quot;/>&lt;/PLANT>&lt;PUR_GROUP>&lt;xsl:value-of select=&quot;&amp;quot;000&amp;quot;&quot;/>&lt;/PUR_GROUP>&lt;MRPPROFILE>&lt;xsl:value-of select=&quot;&amp;quot;PS30&amp;quot;&quot;/>&lt;/MRPPROFILE>&lt;MRP_GROUP>&lt;xsl:value-of select=&quot;&amp;quot;0001&amp;quot;&quot;/>&lt;/MRP_GROUP>&lt;/PLANTDATA>&lt;PLANTDATAX>&lt;PLANT>&lt;xsl:value-of select=&quot;&amp;quot;0001&amp;quot;&quot;/>&lt;/PLANT>&lt;PUR_GROUP>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/PUR_GROUP>&lt;MRPPROFILE>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/MRPPROFILE>&lt;MRP_GROUP>&lt;xsl:value-of select=&quot;&amp;quot;X&amp;quot;&quot;/>&lt;/MRP_GROUP>&lt;/PLANTDATAX>&lt;STORAGELOCATIONDATA>&lt;PLANT>&lt;xsl:value-of select=&quot;'0001'&quot;/>&lt;/PLANT>&lt;STGE_LOC>&lt;xsl:value-of select=&quot;'0001'&quot;/>&lt;/STGE_LOC>&lt;/STORAGELOCATIONDATA>&lt;STORAGELOCATIONDATAX>&lt;PLANT>&lt;xsl:value-of select=&quot;'0001'&quot;/>&lt;/PLANT>&lt;STGE_LOC>&lt;xsl:value-of select=&quot;'0001'&quot;/>&lt;/STGE_LOC>&lt;/STORAGELOCATIONDATAX>&lt;MATERIALDESCRIPTION>&lt;item>&lt;LANGU>&lt;xsl:value-of select=&quot;'E'&quot;/>&lt;/LANGU>&lt;LANGU_ISO>&lt;xsl:value-of select=&quot;'EN'&quot;/>&lt;/LANGU_ISO>&lt;MATL_DESC>&lt;xsl:value-of select=&quot;$Start/tns:Material/tns:rows/tns:content/tns:material-desc/tns:content&quot;/>&lt;/MATL_DESC>&lt;/item>&lt;/MATERIALDESCRIPTION>&lt;/RfcRequest>&lt;/ns0:RequestInputType>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

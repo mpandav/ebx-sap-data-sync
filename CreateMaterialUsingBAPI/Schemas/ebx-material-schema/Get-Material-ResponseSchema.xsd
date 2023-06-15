@@ -3,395 +3,395 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="JSON">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element name="rows">
           <xs:complexType>
-            <xs:sequence>
-              <xs:element name="label" type="xs:string" />
-              <xs:element name="details" type="xs:string" />
-              <xs:element name="content">
+            <xs:all>
+              <xs:element name="label" type="xs:string" minOccurs="0"/>
+              <xs:element name="details" type="xs:string" minOccurs="0" />
+              <xs:element name="content" minOccurs="0">
                 <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="mandant">
+                  <xs:all>
+                    <xs:element name="mandant" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="matnr">
+                    <xs:element name="matnr" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="material-desc">
+                    <xs:element name="material-desc" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="SalesText">
+                    <xs:element name="SalesText" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="industrySector">
+                    <xs:element name="industrySector" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                          <xs:element name="label" type="xs:string" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="mat-type">
+                    <xs:element name="mat-type" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                          <xs:element name="label" type="xs:string" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="matl_group">
+                    <xs:element name="matl_group" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                          <xs:element name="label" type="xs:string" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="matOwner">
+                    <xs:element name="matOwner" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                          <xs:element name="label" type="xs:string" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" minOccurs="0" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="phasedOut">
+                    <xs:element name="phasedOut" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:boolean" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:boolean" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="phaseOutDate">
+                    <xs:element name="phaseOutDate" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="recordStatus">
+                    <xs:element name="recordStatus" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0" />
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="recordCreated">
+                    <xs:element name="recordCreated" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:boolean" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:boolean" minOccurs="0" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="basic-1">
+                    <xs:element name="basic-1" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content">
+                        <xs:all>
+                          <xs:element name="content" minOccurs="0">
                             <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="general-data">
+                              <xs:all>
+                                <xs:element name="general-data" minOccurs="0">
                                   <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="content">
+                                    <xs:all>
+                                      <xs:element name="content" minOccurs="0">
                                         <xs:complexType>
-                                          <xs:sequence>
-                                            <xs:element name="base_uom">
+                                          <xs:all>
+                                            <xs:element name="base_uom" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                  <xs:element name="label" type="xs:string" />
-                                                  <xs:element name="details" type="xs:string" />
-                                                  <xs:element name="selector" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                  <xs:element name="label" type="xs:string" minOccurs="0"/>
+                                                  <xs:element name="details" type="xs:string" minOccurs="0"/>
+                                                  <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="old_mat_no">
+                                            <xs:element name="old_mat_no" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:element name="division">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="lab_design">
+                                            <xs:element name="lab_design" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="prod_memo">
+                                            <xs:element name="prod_memo" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="prod_hier">
+                                            <xs:element name="prod_hier" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="x_plant_matl_status">
+                                            <xs:element name="x_plant_matl_status" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                  <xs:element name="selector" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                  <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="valid_from">
+                                            <xs:element name="valid_from" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="assign-effect-vals">
+                                            <xs:element name="assign-effect-vals" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:boolean" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:boolean" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="genItemCatGroup">
+                                            <xs:element name="genItemCatGroup" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                          </xs:sequence>
+                                          </xs:all>
                                         </xs:complexType>
                                       </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                   </xs:complexType>
                                 </xs:element>
-                                <xs:element name="material-authorization-group">
+                                <xs:element name="material-authorization-group" minOccurs="0">
                                   <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="content">
+                                    <xs:all>
+                                      <xs:element name="content" minOccurs="0">
                                         <xs:complexType>
-                                          <xs:sequence>
-                                            <xs:element name="authorization-group">
+                                          <xs:all>
+                                            <xs:element name="authorization-group" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                          </xs:sequence>
+                                          </xs:all>
                                         </xs:complexType>
                                       </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                   </xs:complexType>
                                 </xs:element>
-                                <xs:element name="dimensions">
+                                <xs:element name="dimensions" minOccurs="0">
                                   <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="content">
+                                    <xs:all>
+                                      <xs:element name="content" minOccurs="0">
                                         <xs:complexType>
-                                          <xs:sequence>
-                                            <xs:element name="gross_wt">
+                                          <xs:all>
+                                            <xs:element name="gross_wt" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="unit_of_wt">
+                                            <xs:element name="unit_of_wt" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="net_weight">
+                                            <xs:element name="net_weight" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="volume">
+                                            <xs:element name="volume" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="volumeunit">
+                                            <xs:element name="volumeunit" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="size_dim">
+                                            <xs:element name="size_dim" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="ean_upc">
+                                            <xs:element name="ean_upc" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="ean_cat">
+                                            <xs:element name="ean_cat" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string"/>
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                          </xs:sequence>
+                                          </xs:all>
                                         </xs:complexType>
                                       </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                   </xs:complexType>
                                 </xs:element>
-                                <xs:element name="packaging-material-data">
+                                <xs:element name="packaging-material-data" minOccurs="0">
                                   <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="content">
+                                    <xs:all>
+                                      <xs:element name="content" minOccurs="0">
                                         <xs:complexType>
-                                          <xs:sequence>
-                                            <xs:element name="matl-grp-pack-matls">
+                                          <xs:all>
+                                            <xs:element name="matl-grp-pack-matls" minOccurs="0">
                                               <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="content" type="xs:string" />
-                                                </xs:sequence>
+                                                <xs:all>
+                                                  <xs:element name="content" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
                                               </xs:complexType>
                                             </xs:element>
-                                          </xs:sequence>
+                                          </xs:all>
                                         </xs:complexType>
                                       </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                   </xs:complexType>
                                 </xs:element>
-                              </xs:sequence>
+                              </xs:all>
                             </xs:complexType>
                           </xs:element>
-                        </xs:sequence>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Plants">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="details" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="details" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="sourceSystem">
+                    <xs:element name="sourceSystem" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string"  minOccurs="0"/>
+                          <xs:element name="label" type="xs:string" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" minOccurs="0" />
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="sourceSystemId">
+                    <xs:element name="sourceSystemId" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:unsignedShort" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="duplicateTo">
                       <xs:complexType>
-                        <xs:sequence>
+                        <xs:all>
                           <xs:element name="content" type="xs:string"/>
                           <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="similarTo">
+                    <xs:element name="similarTo" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" />
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="successorOf">
+                    <xs:element name="successorOf" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string"/>
-                          <xs:element name="selector" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="validFrom">
+                    <xs:element name="validFrom" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="validTo">
+                    <xs:element name="validTo" minOccurs="0">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element name="content" type="xs:string" minOccurs="0"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                  </xs:sequence>
+                  </xs:all>
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
+            </xs:all>
           </xs:complexType>
         </xs:element>
         <xs:element name="pagination">
           <xs:complexType>
-            <xs:sequence>
+            <xs:all>
               <xs:element name="firstPage" />
               <xs:element name="previousPage" />
               <xs:element name="nextPage" />
               <xs:element name="lastPage" />
-            </xs:sequence>
+            </xs:all>
           </xs:complexType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

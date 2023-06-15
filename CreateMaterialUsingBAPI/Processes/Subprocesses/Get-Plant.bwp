@@ -10,6 +10,7 @@
     xmlns:ns10="http://tns.tibco.com/bw/palette/internal/activityerror+bw.xml.parsexml"
     xmlns:ns11="http://example.com/Plant"
     xmlns:ns12="http://www.example.com/namespaces/tns/1686808031661"
+    xmlns:ns13="http://example.com/plant"
     xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+52d6e44f-5146-4ba8-95f9-340f231c235c+RestInvokeOutput"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.Rest"
     xmlns:ns4="activity.jsonParser.input+4d712efc-aeb4-437c-bbeb-e65e5cc42d7d+ActivityInputType"
@@ -696,7 +697,7 @@
         productVersion="2.8.1 V47 2023-02-15" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.com/namespaces/tns/1686744634391}QueryData" output="JSON"/>
+        input="{http://www.example.com/namespaces/tns/1686744634391}QueryData" output="{http://example.com/plant}plant"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -1193,11 +1194,13 @@
             namespace="http://www.example.com/namespaces/tns/1686808031661" prefix="tns7"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem namespace="http://example.com/plant" prefix="tns5"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../Schemas/ebx-material-schema/Get-Plant-ResponseSchema.xsd" namespace=""/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686744634391"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686808031661"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://example.com/plant"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -1230,11 +1233,11 @@
         <bpws:variable element="JSON" name="ParseXml" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:ActivityErrorData"
             name="_error_ParseXml" sca-bpel:internal="true"/>
-        <bpws:variable element="JSON" name="End-input"
-            sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns12:Log" name="inLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:Log" name="outLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:Log" name="ErrorLog-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns13:plant" name="End-input"
+            sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1271,14 +1274,14 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="End-input"
-                    name="End" tibex:copyOf="ParseXml"
+                    name="End"
                     tibex:xpdlId="70535863-4bbd-486c-90a0-bd4ae293038b" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="Copy_1_consoleLogger-InToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseXml&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$ParseXml&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://example.com/plant&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseXml&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns5:plant>&lt;tns5:rows>&lt;tns5:label>&lt;xsl:value-of select=&quot;$ParseXml/rows/label&quot;/>&lt;/tns5:label>&lt;tns5:details>&lt;xsl:value-of select=&quot;$ParseXml/rows/details&quot;/>&lt;/tns5:details>&lt;xsl:for-each select=&quot;$ParseXml/rows/content&quot;>&lt;tns5:content>&lt;xsl:for-each select=&quot;id&quot;>&lt;tns5:id>&lt;tns5:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns5:content>&lt;/tns5:id>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;material&quot;>&lt;tns5:material>&lt;tns5:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns5:content>&lt;tns5:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns5:label>&lt;tns5:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns5:details>&lt;tns5:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns5:selector>&lt;/tns5:material>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;plant&quot;>&lt;tns5:plant>&lt;tns5:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns5:content>&lt;tns5:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns5:label>&lt;tns5:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns5:details>&lt;tns5:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns5:selector>&lt;/tns5:plant>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;MRPController&quot;>&lt;tns5:MRPController>&lt;tns5:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns5:content>&lt;tns5:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns5:selector>&lt;/tns5:MRPController>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;deliveryTimeInDays&quot;>&lt;tns5:deliveryTimeInDays>&lt;tns5:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns5:content>&lt;/tns5:deliveryTimeInDays>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;materialGroup&quot;>&lt;tns5:materialGroup>&lt;tns5:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns5:content>&lt;/tns5:materialGroup>&lt;/xsl:for-each>&lt;/tns5:content>&lt;/xsl:for-each>&lt;/tns5:rows>&lt;/tns5:plant>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1323,7 +1326,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+52d6e44f-5146-4ba8-95f9-340f231c235c+RestInvokeInput&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;InvokeRESTAPI-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:RestActivityInput>&#xa;            &lt;tns1:PathParameters>&#xa;                &lt;mandant>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns5:mandant&quot;/>&#xa;                &lt;/mandant>&#xa;                &lt;materialId>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns5:matnr&quot;/>&#xa;                &lt;/materialId>&#xa;            &lt;/tns1:PathParameters>&#xa;        &lt;/tns1:RestActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+52d6e44f-5146-4ba8-95f9-340f231c235c+RestInvokeInput&quot; xmlns:tns6=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;InvokeRESTAPI-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:RestActivityInput>&#xa;            &lt;tns1:PathParameters>&#xa;                &lt;mandant>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns6:mandant&quot;/>&#xa;                &lt;/mandant>&#xa;                &lt;materialId>&#xa;                    &lt;xsl:value-of select=&quot;$Start/tns6:matnr&quot;/>&#xa;                &lt;/materialId>&#xa;            &lt;/tns1:PathParameters>&#xa;        &lt;/tns1:RestActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

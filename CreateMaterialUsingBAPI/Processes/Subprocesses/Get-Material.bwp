@@ -11,6 +11,7 @@
     xmlns:ns11="http://tns.tibco.com/bw/palette/internal/activityerror+bw.xml.parsexml"
     xmlns:ns12="http://example.com/Materail"
     xmlns:ns13="http://www.example.com/namespaces/tns/1686808031661"
+    xmlns:ns14="http://example.com/material"
     xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+c23cd576-cb7f-4146-98c8-f1d754c58c32+RestInvokeOutput"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.Rest"
     xmlns:ns4="activity.jsonParser.input+c6d4902d-80c1-42c7-a5e7-38e5c9c85f39+ActivityInputType"
@@ -572,17 +573,6 @@
                 </choice>
             </complexType>
         </schema>
-        <schema
-            targetNamespace="activity.jsonParser.output+c6d4902d-80c1-42c7-a5e7-38e5c9c85f39+ActivityOutputType"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.output+c6d4902d-80c1-42c7-a5e7-38e5c9c85f39+ActivityOutputType">
-            <complexType name="ActivityOutputClassType">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="xmlString" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
-        </schema>
         <xsd:schema
             targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/parsexml"
             xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/parsexml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -688,6 +678,17 @@
                 </choice>
             </complexType>
         </schema>
+        <schema
+            targetNamespace="activity.jsonParser.output+c6d4902d-80c1-42c7-a5e7-38e5c9c85f39+ActivityOutputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.output+c6d4902d-80c1-42c7-a5e7-38e5c9c85f39+ActivityOutputType">
+            <complexType name="ActivityOutputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="xmlString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="mpandav"
         createdOn="Wed Jun 14 13:11:24 CEST 2023" description=""
@@ -695,7 +696,7 @@
         productVersion="2.8.1 V47 2023-02-15" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.com/namespaces/tns/1686744634391}QueryData" output="JSON"/>
+        input="{http://www.example.com/namespaces/tns/1686744634391}QueryData" output="{http://example.com/material}material"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -1196,11 +1197,13 @@
             namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1686808031661" prefix="tns7"/>
+        <tibex:namespaceItem namespace="http://example.com/material" prefix="tns8"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686744634391"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../Schemas/ebx-material-schema/Get-Material-ResponseSchema.xsd" namespace=""/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1686808031661"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://example.com/material"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -1234,11 +1237,11 @@
         <bpws:variable element="JSON" name="ParseXml" sca-bpel:internal="true"/>
         <bpws:variable element="ns11:ActivityErrorData"
             name="_error_ParseXml" sca-bpel:internal="true"/>
-        <bpws:variable element="JSON" name="End-input"
-            sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns13:Log" name="inLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:Log" name="outLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:Log" name="ErrorLog-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns14:material" name="End-input"
+            sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1275,14 +1278,14 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="End-input"
-                    name="End" tibex:copyOf="ParseXml"
+                    name="End"
                     tibex:xpdlId="ee5a9561-4abc-44e7-8723-4b20456e1842" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="consoleLogger-outToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseXml&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$ParseXml&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://example.com/material&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseXml&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns8:material>&lt;tns8:rows>&lt;xsl:if test=&quot;$ParseXml/rows/label&quot;>&lt;tns8:label>&lt;xsl:value-of select=&quot;$ParseXml/rows/label&quot;/>&lt;/tns8:label>&lt;/xsl:if>&lt;xsl:if test=&quot;$ParseXml/rows/details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;$ParseXml/rows/details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$ParseXml/rows/content&quot;>&lt;tns8:content>&lt;xsl:for-each select=&quot;mandant&quot;>&lt;tns8:mandant>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:mandant>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;matnr&quot;>&lt;tns8:matnr>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:matnr>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;material-desc&quot;>&lt;tns8:material-desc>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:material-desc>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;SalesText&quot;>&lt;tns8:SalesText>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:SalesText>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;industrySector&quot;>&lt;tns8:industrySector>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;label&quot;>&lt;tns8:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns8:label>&lt;/xsl:if>&lt;xsl:if test=&quot;details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:industrySector>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;mat-type&quot;>&lt;tns8:mat-type>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;label&quot;>&lt;tns8:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns8:label>&lt;/xsl:if>&lt;xsl:if test=&quot;details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:mat-type>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;matl_group&quot;>&lt;tns8:matl_group>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;label&quot;>&lt;tns8:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns8:label>&lt;/xsl:if>&lt;xsl:if test=&quot;details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:matl_group>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;matOwner&quot;>&lt;tns8:matOwner>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;label&quot;>&lt;tns8:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns8:label>&lt;/xsl:if>&lt;xsl:if test=&quot;details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:matOwner>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;phasedOut&quot;>&lt;tns8:phasedOut>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:phasedOut>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;phaseOutDate&quot;>&lt;tns8:phaseOutDate>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:phaseOutDate>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;recordStatus&quot;>&lt;tns8:recordStatus>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:recordStatus>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;recordCreated&quot;>&lt;tns8:recordCreated>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:recordCreated>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;basic-1&quot;>&lt;tns8:basic-1>&lt;xsl:for-each select=&quot;content&quot;>&lt;tns8:content/>&lt;/xsl:for-each>&lt;/tns8:basic-1>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;Plants&quot;>&lt;tns8:Plants>&lt;xsl:if test=&quot;details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;/tns8:Plants>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;sourceSystem&quot;>&lt;tns8:sourceSystem>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;label&quot;>&lt;tns8:label>&lt;xsl:value-of select=&quot;label&quot;/>&lt;/tns8:label>&lt;/xsl:if>&lt;xsl:if test=&quot;details&quot;>&lt;tns8:details>&lt;xsl:value-of select=&quot;details&quot;/>&lt;/tns8:details>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:sourceSystem>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;sourceSystemId&quot;>&lt;tns8:sourceSystemId>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:sourceSystemId>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;duplicateTo&quot;>&lt;tns8:duplicateTo>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/tns8:duplicateTo>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;similarTo&quot;>&lt;tns8:similarTo>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:similarTo>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;successorOf&quot;>&lt;tns8:successorOf>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;xsl:if test=&quot;selector&quot;>&lt;tns8:selector>&lt;xsl:value-of select=&quot;selector&quot;/>&lt;/tns8:selector>&lt;/xsl:if>&lt;/tns8:successorOf>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;validFrom&quot;>&lt;tns8:validFrom>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:validFrom>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;validTo&quot;>&lt;tns8:validTo>&lt;xsl:if test=&quot;content&quot;>&lt;tns8:content>&lt;xsl:value-of select=&quot;content&quot;/>&lt;/tns8:content>&lt;/xsl:if>&lt;/tns8:validTo>&lt;/xsl:for-each>&lt;/tns8:content>&lt;/xsl:for-each>&lt;/tns8:rows>&lt;/tns8:material>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1357,7 +1360,9 @@
                         <bpws:target linkName="GetMaterialToParseJSON"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="ParseJSONToParseXml"/>
+                        <bpws:source linkName="ParseJSONToParseXml">
+                            <tibex:DesignExpression/>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -1375,7 +1380,7 @@
                                     <value
                                     IgnoreAdditionalJSONFields="true"
                                     bagerfish="true"
-                                    jsonInputStyle="None"
+                                    jsonInputStyle="Json with Root"
                                     nullForEmpty="true"
                                     schemaType="Generic" xsi:type="restjson:JsonParser">
                                     <outputEditorElement href="platform:/resource/CreateMaterialUsingBAPI/Schemas/ebx-material-schema/Get-Material-ResponseSchema.xsd#//JSON;XSDElementDeclaration"/>
@@ -1461,7 +1466,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;consoleLogger-out-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Success: Retrieved Material Information ######### &amp;quot;&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($ParseJSON/xmlString, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;outLog-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Success: Retrieved Material Information ######### &amp;quot;&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($ParseJSON/xmlString, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess spawn="true"
                         subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>

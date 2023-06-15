@@ -7,7 +7,6 @@
 	targetNamespace="http://www.example.com/namespaces/tns/1686747150555">
 
 	<xsd:element name="SAPInputRecord">
-
 		<xsd:complexType>
 			<xsd:all>
 				<xsd:element name="Material">
@@ -25,7 +24,7 @@
 														<xsd:complexType>
 															<xsd:sequence>
 																<xsd:element name="content"
-																	type="xsd:unsignedShort" />
+																	type="xsd:string" />
 															</xsd:sequence>
 														</xsd:complexType>
 													</xsd:element>
@@ -33,7 +32,7 @@
 														<xsd:complexType>
 															<xsd:sequence>
 																<xsd:element name="content"
-																	type="xsd:unsignedByte" />
+																	type="xsd:string" />
 															</xsd:sequence>
 														</xsd:complexType>
 													</xsd:element>

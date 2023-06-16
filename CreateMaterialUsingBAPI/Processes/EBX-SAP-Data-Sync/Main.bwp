@@ -656,7 +656,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="285"
+                                    <layoutConstraint x="286"
                                     xsi:type="notation:Bounds" y="114"/>
                                     </children>
                                     <children type="4002">
@@ -888,8 +888,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="288"
-                                    width="983" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="244"
+                                    width="989" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>

@@ -4,60 +4,61 @@
   <xs:element name="plant">
     <xs:complexType>
       <xs:sequence>
+
         <xs:element name="rows" minOccurs="0">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="label" type="xs:string" />
-              <xs:element name="details" type="xs:string" />
-              <xs:element name="content">
+              <xs:element name="label" type="xs:string" nillable="true" minOccurs="0"/>
+              <xs:element name="details" type="xs:string" nillable="true" minOccurs="0"/>
+              <xs:element name="content" nillable="true" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="id">
+                    <xs:element name="id" nillable="true" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="content" type="xs:string" nillable="true" minOccurs="0"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="material">
+                    <xs:element name="material" nillable="true" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
+                          <xs:element name="content" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="label" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" nillable="true" minOccurs="0"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="plant">
+                    <xs:element name="plant" nillable="true" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
-                          <xs:element name="label" type="xs:string" />
-                          <xs:element name="details" type="xs:string" />
-                          <xs:element name="selector" type="xs:string" />
+                          <xs:element name="content" type="xs:string" minOccurs="0" nillable="true"/>
+                          <xs:element name="label" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="details" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" nillable="true" minOccurs="0"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="MRPController">
+                    <xs:element name="MRPController" nillable="true" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string"/>
-                          <xs:element name="selector" type="xs:string" />
+                          <xs:element name="content" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="selector" type="xs:string" nillable="true" minOccurs="0"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="deliveryTimeInDays">
+                    <xs:element name="deliveryTimeInDays" nillable="true" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="content" type="xs:string" nillable="true" minOccurs="0"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="materialGroup">
+                    <xs:element name="materialGroup" nillable="true" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="content" type="xs:string" />
+                          <xs:element name="content" type="xs:string" nillable="true" minOccurs="0"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -67,6 +68,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+
       </xs:sequence>
     </xs:complexType>
   </xs:element>

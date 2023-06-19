@@ -37,7 +37,6 @@
         <task name="GetPl">
             <endingVariables>
                 <variable>GetPl-input</variable>
-                <variable>Start</variable>
             </endingVariables>
         </task>
         <task name="ParseJSON">
@@ -69,6 +68,17 @@
         <task name="ErrorLog">
             <endingVariables>
                 <variable>ErrorLog-input</variable>
+            </endingVariables>
+        </task>
+        <task name="emptyResponse">
+            <endingVariables>
+                <variable>emptyResponse-input</variable>
+                <variable>Start</variable>
+            </endingVariables>
+        </task>
+        <task name="Throw1">
+            <endingVariables>
+                <variable>Throw1-input</variable>
             </endingVariables>
         </task>
         <task name="ExceptionLog">
@@ -792,7 +802,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="746"
+                                    <layoutConstraint x="961"
                                     xsi:type="notation:Bounds" y="126"/>
                                     </children>
                                     <children type="4002">
@@ -864,7 +874,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="353"
+                                    <layoutConstraint x="477"
                                     xsi:type="notation:Bounds" y="126"/>
                                     </children>
                                     <children type="4002">
@@ -900,8 +910,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="386"
-                                    xsi:type="notation:Bounds" y="236"/>
+                                    <layoutConstraint x="91"
+                                    xsi:type="notation:Bounds" y="249"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -936,7 +946,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="514"
+                                    <layoutConstraint x="630"
                                     xsi:type="notation:Bounds" y="126"/>
                                     </children>
                                     <children type="4002">
@@ -1008,7 +1018,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint x="614"
+                                    <layoutConstraint x="789"
                                     xsi:type="notation:Bounds" y="126"/>
                                     </children>
                                     <children type="4002">
@@ -1045,7 +1055,79 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.8"/>
                                     <layoutConstraint x="191"
-                                    xsi:type="notation:Bounds" y="236"/>
+                                    xsi:type="notation:Bounds" y="249"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <layoutConstraint x="471"
+                                    xsi:type="notation:Bounds" y="217"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
+                                    <layoutConstraint x="582"
+                                    xsi:type="notation:Bounds" y="217"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1060,7 +1142,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="384"
+                                    <layoutConstraint height="344"
                                     width="1167" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -1133,6 +1215,47 @@
                                     x="366"
                                     xsi:type="notation:Bounds" y="54"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+                                    <layoutConstraint
+                                    x="498"
+                                    xsi:type="notation:Bounds" y="54"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1146,7 +1269,9 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    <layoutConstraint
+                                    height="168"
+                                    width="1069" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1194,7 +1319,7 @@
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="42" xsi:type="notation:Location" y="-12"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
@@ -1205,7 +1330,7 @@
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="16" xsi:type="notation:Location" y="19"/>
             </children>
             <styles lineColor="9983" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="9983" fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
@@ -1279,6 +1404,40 @@
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
             <bendpoints points="[25, 2, -176, -18]$[177, 18, -24, -2]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
+            <children type="6002">
+                <layoutConstraint x="26" xsi:type="notation:Location" y="-51"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
+            <bendpoints
+                points="[25, 0, -255, -91]$[134, 0, -146, -91]$[134, 93, -146, 2]$[256, 93, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.9"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1347,6 +1506,8 @@
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:Log" name="ExceptionLog-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:Log" name="emptyResponse-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns6:DefaultFault" name="Throw1-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1362,35 +1523,50 @@
                 tibex:faultNameVar="FaultName" tibex:xpdlId="6d1863ff-9484-4176-ad9d-df77ea4ec251">
                 <bpws:scope name="scope1">
                     <bpws:flow name="flow1">
-                        <bpws:links/>
+                        <bpws:links>
+                            <bpws:link name="ExceptionLogToExit" tibex:linkType="SUCCESS"/>
+                        </bpws:links>
                         <bpws:extensionActivity>
                             <tibex:extActivity
                                 inputVariable="ExceptionLog-input"
                                 name="ExceptionLog"
                                 tibex:xpdlId="8b15f4b9-d836-4213-a4a8-5342b4a18ba3"
                                 type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                <bpws:sources>
+                                    <bpws:source linkName="ExceptionLogToExit"/>
+                                </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;concat(&amp;quot;########## Exception Occurred  in  Process  -  &amp;quot;,bw:getModuleProperty(&amp;quot;BW.PROCESS.NAME&amp;quot;))&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;concat(&amp;quot;########## Exception Occurred  in  Process  -  &amp;quot;,bw:getModuleProperty(&amp;quot;BW.PROCESS.NAME&amp;quot;),&amp;quot;   &amp;quot;, $FaultDetails/Msg)&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:CallProcess
                                     subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                             </tibex:extActivity>
                         </bpws:extensionActivity>
+                        <bpws:exit name="End-Execution" tibex:xpdlId="475223f9-4233-4004-a79b-e6f15c0bbc12">
+                            <bpws:targets>
+                                <bpws:target linkName="ExceptionLogToExit"/>
+                            </bpws:targets>
+                        </bpws:exit>
                     </bpws:flow>
                 </bpws:scope>
             </bpws:catchAll>
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="InvokeRESTAPIToParseJSON" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link name="GetPlToErrorLog" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="InvokeRESTAPIToParseJSON_withPlantdata"
+                    tibex:label="with Plant data" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="GetPlToErrorLog_Error"
+                    tibex:label="Error" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="ParseJSONToParseXml" tibex:linkType="SUCCESS"/>
                 <bpws:link name="StartToconsoleLogger-In" tibex:linkType="SUCCESS"/>
                 <bpws:link name="consoleLogger-InToGetPl" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ParseXmlToCopy_1_consoleLogger-In" tibex:linkType="SUCCESS"/>
                 <bpws:link name="Copy_1_consoleLogger-InToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ErrorLogToThrow" tibex:linkType="SUCCESS"/>
+                <bpws:link name="GetPlToemptyResponse_EmprtyPayload"
+                    tibex:label="Emprty Payload" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="emptyResponseToThrow1" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1442,19 +1618,26 @@
                         <bpws:target linkName="consoleLogger-InToGetPl"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="InvokeRESTAPIToParseJSON">
+                        <bpws:source linkName="InvokeRESTAPIToParseJSON_withPlantdata">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="$GetPl/statusCode=200" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$GetPl/statusCode=200 and $GetPl/MessageBody/asciiContent != '{&quot;rows&quot;:[]}'" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$GetPl/statusCode=200]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$GetPl/statusCode=200 and $GetPl/MessageBody/asciiContent != '{"rows":[]}']]></bpws:transitionCondition>
                         </bpws:source>
-                        <bpws:source linkName="GetPlToErrorLog">
+                        <bpws:source linkName="GetPlToErrorLog_Error">
                             <tibex:DesignExpression>
                                 <tibex:expression
                                     expression="$GetPl/statusCode != 200" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
                             <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$GetPl/statusCode != 200]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="GetPlToemptyResponse_EmprtyPayload">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$GetPl/MessageBody/asciiContent = '{&quot;rows&quot;:[]}'" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$GetPl/MessageBody/asciiContent = '{"rows":[]}']]></bpws:transitionCondition>
                         </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
@@ -1486,10 +1669,12 @@
                     name="ParseJSON" outputVariable="ParseJSON"
                     tibex:xpdlId="4d712efc-aeb4-437c-bbeb-e65e5cc42d7d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="InvokeRESTAPIToParseJSON"/>
+                        <bpws:target linkName="InvokeRESTAPIToParseJSON_withPlantdata"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="ParseJSONToParseXml"/>
+                        <bpws:source linkName="ParseJSONToParseXml">
+                            <tibex:DesignExpression/>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -1601,7 +1786,7 @@
                     tibex:xpdlId="f539aa52-4243-474c-9e9a-b102829aa34a"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="GetPlToErrorLog"/>
+                        <bpws:target linkName="GetPlToErrorLog_Error"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="ErrorLogToThrow"/>
@@ -1614,6 +1799,35 @@
                         subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="emptyResponse-input"
+                    name="emptyResponse"
+                    tibex:xpdlId="1aeb2359-bc4a-46b3-893c-9a6990039f92"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="GetPlToemptyResponse_EmprtyPayload"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="emptyResponseToThrow1"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding coercion=""
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tns6=&quot;http://www.example.com/namespaces/tns/1686744634391&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;GetPl&quot;/>&lt;xsl:template name=&quot;emptyResponse-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;concat(&amp;quot;########## FAILED: No Plant Data for Material ID : &amp;quot;, $Start/tns6:matnr, &amp;quot;  &amp;quot;)&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;$GetPl/MessageBody/asciiContent&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess spawn="true"
+                        subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:throw faultName="ns6:DefaultFault"
+                faultVariable="Throw1-input" name="Throw1" tibex:xpdlId="865e9458-580d-4fc4-bd42-cec573dcfc24">
+                <tibex:inputBindings>
+                    <tibex:partBinding
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetPl&quot;/>&lt;xsl:template name=&quot;Throw1-input&quot; match=&quot;/&quot;>&lt;tns2:DefaultFault>&lt;xsl:if test=&quot;$GetPl/MessageBody/asciiContent&quot;>&lt;message>&lt;xsl:value-of select=&quot;$GetPl/MessageBody/asciiContent&quot;/>&lt;/message>&lt;/xsl:if>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;NO PLANT INFO FOR MATERIAL&amp;quot;&quot;/>&lt;/msgCode>&lt;/tns2:DefaultFault>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                </tibex:inputBindings>
+                <bpws:targets>
+                    <bpws:target linkName="emptyResponseToThrow1"/>
+                </bpws:targets>
+            </bpws:throw>
         </bpws:flow>
     </bpws:scope>
 </bpws:process>

@@ -681,6 +681,47 @@
                                     x="231"
                                     xsi:type="notation:Bounds" y="41"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName=".AppleSystemUIFont"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+                                    <layoutConstraint
+                                    x="379"
+                                    xsi:type="notation:Bounds" y="41"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -828,6 +869,17 @@
             <bendpoints
                 points="[25, 0, -80, 113]$[47, 0, -58, 113]$[47, -113, -58, 0]$[81, -113, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -924,13 +976,18 @@
                 tibex:faultNameVar="FaultName" tibex:xpdlId="429bf7a8-60ea-45c7-aedf-e8c4a1fdac20">
                 <bpws:scope name="scope1">
                     <bpws:flow name="flow1">
-                        <bpws:links/>
+                        <bpws:links>
+                            <bpws:link name="ExceptionLogToRethrow" tibex:linkType="SUCCESS"/>
+                        </bpws:links>
                         <bpws:extensionActivity>
                             <tibex:extActivity
                                 inputVariable="ExceptionLog-input"
                                 name="ExceptionLog"
                                 tibex:xpdlId="9b3bdf32-cdee-478d-beca-4ad701e54355"
                                 type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                <bpws:sources>
+                                    <bpws:source linkName="ExceptionLogToRethrow"/>
+                                </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns7:Log>&lt;tns7:Type>&lt;xsl:value-of select=&quot;concat(&amp;quot;########## EXCEPTION OCCURRED IN PROCESS  -  &amp;quot;,bw:getModuleProperty(&amp;quot;BW.PROCESS.NAME&amp;quot;))&quot;/>&lt;/tns7:Type>&lt;tns7:Data>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails, false(), false())&quot;/>&lt;/tns7:Data>&lt;/tns7:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
@@ -939,6 +996,11 @@
                                     subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                             </tibex:extActivity>
                         </bpws:extensionActivity>
+                        <bpws:rethrow name="Rethrow" tibex:xpdlId="b3d655a2-77c9-4b88-afe1-7f782e1de528">
+                            <bpws:targets>
+                                <bpws:target linkName="ExceptionLogToRethrow"/>
+                            </bpws:targets>
+                        </bpws:rethrow>
                     </bpws:flow>
                 </bpws:scope>
             </bpws:catchAll>

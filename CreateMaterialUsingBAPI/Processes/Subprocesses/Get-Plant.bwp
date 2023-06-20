@@ -1212,7 +1212,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
-                                    x="498"
+                                    x="489"
                                     xsi:type="notation:Bounds" y="54"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1376,17 +1376,6 @@
                 points="[25, 0, -255, -91]$[134, 0, -146, -91]$[134, 93, -146, 2]$[256, 93, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
@@ -1397,6 +1386,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.9"/>
             <bendpoints
                 points="[25, 0, -447, 92]$[359, 0, -113, 92]$[359, -92, -113, 0]$[448, -92, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1483,7 +1483,7 @@
                 <bpws:scope name="scope1">
                     <bpws:flow name="flow1">
                         <bpws:links>
-                            <bpws:link name="ExceptionLogToExit" tibex:linkType="SUCCESS"/>
+                            <bpws:link name="ExceptionLogToRethrow" tibex:linkType="SUCCESS"/>
                         </bpws:links>
                         <bpws:extensionActivity>
                             <tibex:extActivity
@@ -1492,7 +1492,7 @@
                                 tibex:xpdlId="8b15f4b9-d836-4213-a4a8-5342b4a18ba3"
                                 type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <bpws:sources>
-                                    <bpws:source linkName="ExceptionLogToExit"/>
+                                    <bpws:source linkName="ExceptionLogToRethrow"/>
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
@@ -1502,11 +1502,11 @@
                                     subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                             </tibex:extActivity>
                         </bpws:extensionActivity>
-                        <bpws:exit name="End-Execution" tibex:xpdlId="475223f9-4233-4004-a79b-e6f15c0bbc12">
+                        <bpws:rethrow name="Rethrow" tibex:xpdlId="41d604e5-1ffd-46fb-82d3-54d194faa68f">
                             <bpws:targets>
-                                <bpws:target linkName="ExceptionLogToExit"/>
+                                <bpws:target linkName="ExceptionLogToRethrow"/>
                             </bpws:targets>
-                        </bpws:exit>
+                        </bpws:rethrow>
                     </bpws:flow>
                 </bpws:scope>
             </bpws:catchAll>

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CreateMaterialUsingBAPI application
+Bundle-SymbolicName: CreateMaterialUsingBAPI.application
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-MP-LISTING-ID: 6pcqff5cv33yrimhzrpt3mkrpnnjagxg
+TIBCO-BW-Edition: bwe
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Application: META-INF/TIBCO.xml
+TIBCO-BW-Version: 2.8.1 V47 2023-02-15

@@ -1,0 +1,18 @@
+ <?xml version='1.0' encoding='UTF-8'?>
+<!--XML content generated for /root/Material of content type=VALUES in dataset Siemens_MaterialMaster in dataspace MaterialMaster on 2023-06-20T08:44:12.727 by user [ebx-systemUser].-->
+<root xmlns:ebxd="urn:ebx-schemas:deployment_1.0" ebxd:uuid="952F0B20-0A25-11EE-964A-00D8990089E3" ebxd:creator="Uadmin" ebxd:lastUser="Uadmin" ebxd:lastTime="2023-06-13T20:05:01.938" ebxd:creationTime="2023-06-13T20:05:02.802">
+    <Material ebxd:uuid="1BF981C0-0B80-11EE-B000-00D8990089E3" ebxd:creator="Uadmin" ebxd:lastUser="Uadmin" ebxd:lastTime="2023-06-15T13:25:34.323" ebxd:creationTime="2023-06-15T13:25:34.812">
+        <mandant>800</mandant>
+        <matnr>8</matnr>
+        <material-desc>904</material-desc>
+        <SalesText>test</SalesText>
+        <industrySector>M</industrySector>
+        <mat-type>HALB</mat-type>
+        <matl_group>001|HALB</matl_group>
+        <phasedOut>false</phasedOut>
+        <phaseOutDate>2023-06-15</phaseOutDate>
+        <recordStatus>TO_BE_APPROVED</recordStatus>
+        <recordCreated>false</recordCreated>
+        <sourceSystem>MDM</sourceSystem>
+    </Material>
+</root>

@@ -836,7 +836,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint x="751"
+                                    <layoutConstraint x="850"
                                     xsi:type="notation:Bounds" y="114"/>
                                     </children>
                                     <children type="4002">
@@ -872,7 +872,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.8"/>
-                                    <layoutConstraint x="856"
+                                    <layoutConstraint x="750"
                                     xsi:type="notation:Bounds" y="114"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -888,8 +888,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="244"
-                                    width="989" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="286"
+                                    width="994" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -899,7 +899,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="286" width="992" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="286" width="997" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -1009,7 +1009,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="428" width="992" x="1"
+                    <layoutConstraint height="428" width="997" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1018,7 +1018,7 @@
             </children>
             <styles fontName=".AppleSystemUIFont" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="480" width="1334" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="480" width="1339" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1090,25 +1090,25 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[25, 0, -92, 0]$[93, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints points="[25, 0, -69, 0]$[70, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName=".AppleSystemUIFont" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -8, -69, 0]$[70, 0, -24, 8]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1223,9 +1223,8 @@
                     name="Create-SAP-RecordToUpdate-Master-Record" tibex:linkType="SUCCESS"/>
                 <bpws:link name="consoleLoggerToParseXml" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JMSReceiveMessageToLogEvent" tibex:linkType="SUCCESS"/>
-                <bpws:link
-                    name="Update-Master-RecordToCopy_1_LogEvent-Start" tibex:linkType="SUCCESS"/>
-                <bpws:link name="LogEndToConfirm" tibex:linkType="SUCCESS"/>
+                <bpws:link name="Update-Master-RecordToConfirm" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ConfirmToLogEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1248,7 +1247,8 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/jms#//JMSReceiverEventSource"/>
-                                    <value ackMode="Client"
+                                    <value
+                                    ackMode="TIBCO EMS Explicit Client"
                                     connectionReference="jmsConnection"
                                     maxSessions="1"
                                     messagingStyle="Queue"
@@ -1361,7 +1361,7 @@
                         <bpws:target linkName="Create-SAP-RecordToUpdate-Master-Record"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="Update-Master-RecordToCopy_1_LogEvent-Start"/>
+                        <bpws:source linkName="Update-Master-RecordToConfirm"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
@@ -1384,7 +1384,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JMSReceiveMessage&quot;/>&lt;xsl:template name=&quot;LogStart-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## EBX Event Received ######### &amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;string(tib:trim($JMSReceiveMessage/Body))&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JMSReceiveMessage&quot;/>&lt;xsl:template name=&quot;LogStart-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;##########  EVENT RECEIVED FROM MDM SYSTEM  ######### &amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;string(tib:trim($JMSReceiveMessage/Body))&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess spawn="true"
                         subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1396,14 +1396,11 @@
                     tibex:xpdlId="b5c91295-ca9a-412e-8084-3939f04227cf"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="Update-Master-RecordToCopy_1_LogEvent-Start"/>
+                        <bpws:target linkName="ConfirmToLogEnd"/>
                     </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="LogEndToConfirm"/>
-                    </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;LogEnd-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## Event Consumed Successfully, Confirming the Message ######### &amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1686808031661&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;LogEnd-input&quot; match=&quot;/&quot;>&lt;tns4:Log>&lt;tns4:Type>&lt;xsl:value-of select=&quot;&amp;quot;########## EBX EVENT CONSUMED SUCCESSFULLY, CONFIRMING  MSG  &amp;quot;&quot;/>&lt;/tns4:Type>&lt;tns4:Data>&lt;xsl:value-of select=&quot;&amp;quot;SUCCESS&amp;quot;&quot;/>&lt;/tns4:Data>&lt;/tns4:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess spawn="true"
                         subProcessName="Subprocesses.consoleLogger" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1413,8 +1410,11 @@
                 <tibex:activityExtension name="Confirm"
                     tibex:xpdlId="42f4b20f-1a27-4f7a-85c6-b27b3df32a47" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="LogEndToConfirm"/>
+                        <bpws:target linkName="Update-Master-RecordToConfirm"/>
                     </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ConfirmToLogEnd"/>
+                    </bpws:sources>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.generalactivities.confirm"

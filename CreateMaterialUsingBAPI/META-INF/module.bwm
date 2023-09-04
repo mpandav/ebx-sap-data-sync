@@ -34,6 +34,8 @@
   <sca:property xmi:id="_iTyEMAqaEe6ikPJ6ZQ7YGw" name="/SharedResources/JMS/QName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_w4vicAqaEe6ikPJ6ZQ7YGw" name="/SharedResources/JMS/userName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_xOeh4AqaEe6ikPJ6ZQ7YGw" name="/SharedResources/JMS/passWord" type="property:password" scaext:simpleValue="#!CMIYvOa+4O8aCNmQli7SeA==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1SV1gEr8Ee6bFZeCbr3BPg" name="/SharedResources/HTTP/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_71SlIEr8Ee6bFZeCbr3BPg" name="/SharedResources/HTTP/Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_eF540As6Ee6y8qtTlJblxQ" name="ComponentMain" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_eGBNkAs6Ee6y8qtTlJblxQ" processName="EBX-SAP-Data-Sync.Main"/>
   </sca:component>

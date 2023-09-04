@@ -120,12 +120,13 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI///SharedResources/JMS/serevre_url</name>
-			<value>tcp://34.244.142.248:7222</value>
+			<value>tcp://3.254.1.84:7222</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 			<useLookupValue>false</useLookupValue>
+			<lookupValue>tcp://3.254.1.84:7222</lookupValue>
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI///SharedResources/JMS/userName</name>
@@ -304,6 +305,24 @@
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//CreateMaterialUsingBAPI///SharedResources/HTTP/Host</name>
+			<value>3.254.1.84</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
+		<globalVariable>
+			<name>//CreateMaterialUsingBAPI///SharedResources/HTTP/Port</name>
+			<value>8080</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>

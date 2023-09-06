@@ -987,8 +987,8 @@
                                     <styles restoreHeight="119"
                                     restoreWidth="942" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
-                                    <layoutConstraint height="119"
-                                    width="942" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="101"
+                                    width="947" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -998,8 +998,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="141" width="952"
-                                x="22" xsi:type="notation:Bounds" y="264"/>
+                            <layoutConstraint height="127" width="957"
+                                x="22" xsi:type="notation:Bounds" y="263"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1009,7 +1009,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="428" width="997" x="1"
+                    <layoutConstraint height="391" width="997" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1018,7 +1018,7 @@
             </children>
             <styles fontName=".AppleSystemUIFont" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="457" width="1339" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="443" width="1339" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>

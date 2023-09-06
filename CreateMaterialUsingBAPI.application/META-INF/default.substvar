@@ -12,7 +12,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI//SAPAppServer</name>
-			<value>saptest.tibco.com</value>
+			<value>10.69.86.24</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -84,7 +84,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI//SAPSystemName</name>
-			<value></value>
+			<value>PA1</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -120,13 +120,13 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI///SharedResources/JMS/serevre_url</name>
-			<value>tcp://3.254.1.84:7222</value>
+			<value>tcp://54.74.35.241:7222</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>true</isOverride>
+			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
-			<lookupValue>tcp://3.254.1.84:7222</lookupValue>
+			<lookupValue>tcp://54.74.35.241:7222</lookupValue>
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI///SharedResources/JMS/userName</name>
@@ -166,7 +166,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI//IP_AWS-machine</name>
-			<value>34.244.53.149</value>
+			<value>54.74.35.241</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -229,7 +229,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI//SAPPassword</name>
-			<value>#!+mT8T26t1JY2EGVcq5pl2PyyxVC6qLBpCSItHtKQ+JQ=</value>
+			<value>#!i34fEYb0KzXxnIAI8zneowFMpaoUjWfA</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
@@ -292,7 +292,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI//SAPUserName</name>
-			<value>sapadapter1</value>
+			<value>sabari</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -310,7 +310,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CreateMaterialUsingBAPI///SharedResources/HTTP/Host</name>
-			<value>3.254.1.84</value>
+			<value>54.74.35.241</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
